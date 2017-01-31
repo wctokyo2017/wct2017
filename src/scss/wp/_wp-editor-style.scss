@@ -1,0 +1,63 @@
+/* editor-style
+/* ---------------------------------------- */
+.entry-content {
+  h1, h2, h3, h4, h5, h6,
+  dl, ul, ol, p, small, blockquote, pre, table {
+  }
+  h1 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  h5 {
+  }
+  h6 {
+  }
+  p {
+  }
+  small {
+  }
+  dl {
+    dt {
+    }
+    dd {
+      dt {
+      }
+    }
+  }
+  ul, ol {
+  }
+  ul li,
+  ol li {
+  }
+  ul {
+    li {
+    }
+  }
+  ol {
+    li {
+      list-style-type: decimal;
+      > ol {
+        li {
+          list-style-type: lower-latin;
+        }
+      }
+      > ul {
+        li {
+          list-style-type: square;
+        }
+      }
+    }
+  }
+  code {
+  }
+  pre {
+  }
+  kbd {
+  }
+  blockquote {
+  }
+}
