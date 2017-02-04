@@ -40,7 +40,11 @@ function filePaths() {
 var nodeSassConf = {
   includePaths  : [
     // Here is an entry point for dependencies!
-  ],
+    './src/scss'
+  ].concat(
+    require("bourbon").includePaths,
+    require("bourbon-neat").includePaths
+  ),
   outputStyle   : 'compressed'
 };
 
@@ -81,11 +85,18 @@ gulp.task('image-min', function() {
 /*----------------------------------------------------------------------------*/
 
 gulp.task('pug', function() {
-  var paths = filePaths();
-  return gulp.src([
-    paths.htmlPath + '**/*.pug',
-    '!' + paths.htmlPath + '**/_*.pug'
-  ])
+  var paths = filePaths(), dest, src;
+  if ( deployFlg ) {
+    src = [paths.htmlPath + 'index.pug']
+    dest = './docs'
+  } else {
+    src = [
+      paths.htmlPath + '**/*.pug',
+      '!' + paths.htmlPath + '**/_*.pug'
+    ];
+    dest = paths.htmlDest;
+  }
+  return gulp.src(src)
     .pipe($.data(function(file) {
       return require('./src/html-setting.json');
     }))
@@ -93,7 +104,7 @@ gulp.task('pug', function() {
       errorHandler: $.notify.onError('<%= error.message %>')
     }))
     .pipe($.pug({ pretty: true }))
-    .pipe(gulp.dest(paths.htmlDest));
+    .pipe(gulp.dest(dest));
 });
 
 /*----------------------------------------------------------------------------*/
@@ -124,12 +135,11 @@ gulp.task('sass', function () {
 
 gulp.task('deploy', function() {
   deployFlg = true;
-  runSequence('sass', 'image-min', function() {
+  runSequence( 'pug', 'sass', 'image-min', function() {
     deployFlg = false;
     console.log( 'Deploy Done. Push them to origin/master!' );
   });
 });
-
 
 gulp.task('watch', function() {
   deployFlg = false;
@@ -141,7 +151,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', [
-  'browser-sync',
   'image-min',
   'pug',
   'sass',

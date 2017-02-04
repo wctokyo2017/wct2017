@@ -12,12 +12,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "WordCamp Tokyo 20167 team",
-  "repository" :{
-    "type" : "git",
-    "url" : "https://github.com/wctokyo2017/wct2017.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wctokyo2017/wct2017.git"
   },
   "license": "GPL-3.0",
   "devDependencies": {
+    "bourbon": "^4.2.7",
+    "bourbon-neat": "^1.8.0",
     "browser-sync": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -28,11 +30,11 @@
     "gulp-data": "latest",
     "gulp-flatten": "latest",
     "gulp-imagemin": "latest",
-    "gulp-pug": "latest",
     "gulp-load-plugins": "latest",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
     "gulp-prettify": "latest",
+    "gulp-pug": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "^2.3.2",
     "gulp-shell": "^0.5.0",
