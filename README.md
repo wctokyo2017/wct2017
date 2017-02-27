@@ -8,6 +8,7 @@ A WordPress theme for WordCamp 2017
 
 WordCampサイトには以下の制約があります。
 
+- マルチサイトである
 - 新たにテーマをインストールすることはできず、既存テーマから選択するだけ
 - PHPやJavascriptを追加することは一切できない
 - 可能なのはカスタムCSSを読み込むことだけ。このカスタムCSSは外部URLを設定できるので、このGithubリポジトリから読み込むことができます。
@@ -16,7 +17,30 @@ WordCampサイトには以下の制約があります。
 
 ## セットアップ方法
 
-このリポジトリを初期化するにはnpmが必要です。
+### WordPressサイトの設定
+
+VCCWをクローンしているので、それをダウンロードしてください。
+
+[wct2017/vccw](https://github.com/wctokyo2017/vccw)
+
+```
+git clone git@github.com:wctokyo2017/vccw.git ./wct2017-vccw
+```
+
+これで、以下の設定が行われます。
+
+- WordPressマルチサイトのインストール
+- 必要なプラグインを諸々インストール
+- 必要な親テーマをインストール
+- このテーマリポジトリをインストールし、有効化
+
+成功すれば、 `https://wctokyo2017.dev` でアクセスします。証明書のエラーは無視してください。
+
+もし失敗した場合は、このリポジトリ[wct2017/vccw](https://github.com/wctokyo2017/wct2017/issues) にイシューとして登録してください。
+
+### テーマのビルド
+
+このテーマを初期化するにはnpmが必要です。
 
 ```
 npm install
