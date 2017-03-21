@@ -1,0 +1,63 @@
+
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: $body-base-font;
+  font-weight: $body-base-weight;
+  background-color: $wct-bg-color;
+}
+
+.grid-container{
+  box-sizing: border-box;
+  width: 1080px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  @include grid-container;
+}
+
+//
+// -----------------
+// Utility
+//
+//
+%clearfix{
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.assistive-text{
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
+//
+// -----------------
+// Links
+//
+//
+@mixin white-link($underline: false){
+  transition: color .3s 0 linear;
+  &:link, &:visited{
+    color: #fff;
+    @if($underline){
+      text-decoration: underline;
+    }@else{
+      text-decoration: none;
+    }
+  }
+  &:hover, &:active{
+    color: #ffffbc;
+    text-decoration: none;
+  }
+  @content;
+}

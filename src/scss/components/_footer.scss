@@ -1,0 +1,28 @@
+
+.site-footer{
+  background: $wct-footer-bg;
+  color: #fff;
+}
+
+#footer-widgets{
+  @extend .grid-container;
+
+}
+
+.site-info{
+  @extend .grid-container;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  a{
+    &:link, &:visited{
+      color: #fff;
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}

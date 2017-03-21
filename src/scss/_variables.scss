@@ -1,0 +1,30 @@
+//
+//------------------------
+// Color setting
+//
+//
+
+// Main
+$wct-bg-color: #002C5C;
+$wct-header-bg: transparentize( #3094e9, 0.82);
+$wct-table-header-bg: #012c5d;
+
+// Button
+$wct-btn-bg: #01579b;
+$wct-btn-color: #fff;
+$wct-btn-disabled-bg: #ccc;
+
+// Footer
+$wct-footer-bg: #000C24;
+
+
+//
+//------------------------
+// Font setting
+//
+//
+
+// Body
+$body-base-font:  helvetica, arial, 'Hiragino Kaku Gothic ProN', meiryo, 'ms pgothic', sans-serif;
+$body-base-weight: 300;
+$wct-monospace: Consolas, 'Courier New', Courier, Monaco, monospace;

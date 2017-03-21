@@ -1,0 +1,46 @@
+.btn{
+  display: inline-block;
+  padding: 20px 40px;
+  box-shadow: 0 0 5px 3px rgba( 0, 0, 0, .2 ) !important;
+  transition: color .3s 0 linear, background-color .3s 0 linear, box-shadow .3s 0 linear;
+  border-radius: 28px;
+  line-height: 1;
+  box-sizing: border-box;
+  &.full{
+    width: 100%;
+  }
+  &:link, &:visited{
+    color: $wct-btn-color !important;
+    text-decoration: none !important;
+    background-color: $wct-btn-bg;
+  }
+  &:hover, &:active{
+    text-decoration: none !important;
+    color: $wct-btn-color !important;
+    background-color: #0288d1;
+  }
+  &:active{
+    box-shadow: 0 0 0 0 transparent !important;
+  }
+  &.hollow{
+    border: 1px solid $wct-btn-color;
+    &:link, &:visited{
+      background-color: transparent !important;
+    }
+    &:hover, &:active{
+      color: $wct-btn-bg !important;
+      background-color: $wct-btn-color !important;
+    }
+  }
+  &.disabled{
+    cursor: not-allowed;
+    &:link, &:visited{
+      background-color: $wct-btn-disabled-bg !important;
+    }
+    &:active{
+      background-color: $wct-btn-disabled-bg !important;
+    }
+  }
+
+
+}

@@ -1,0 +1,31 @@
+#main .site-navigation{
+
+  @extend %clearfix;
+
+  position: relative;
+
+  margin: 40px 0;
+  .nav-previous,
+  .nav-next{
+    position: relative;
+    width: 50%;
+  }
+  .nav-previous{
+    z-index: 9;
+    float: left;
+  }
+  .nav-next{
+    z-index: 9;
+    float: right;
+    text-align: right;
+  }
+
+  a{
+    @extend .btn;
+    @extend .btn.hollow;
+    font-size: 14px;
+    padding: 10px 20px !important;
+
+  }
+
+}

@@ -19,7 +19,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "bourbon": "^4.2.7",
-    "bourbon-neat": "^1.8.0",
+    "bourbon-neat": "^2.0.0",
     "browser-sync": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -39,7 +39,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-shell": "^0.5.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "latest",
+    "gulp-uglify": "^2.1.2",
     "run-sequence": "^1.1.5",
     "yargs": "^4.3.1"
   }
