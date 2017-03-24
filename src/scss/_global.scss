@@ -12,12 +12,15 @@ body{
 
 .grid-container{
   box-sizing: border-box;
-  width: 1080px;
   padding-right: 20px;
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
   @include grid-container;
+
+  @include grid-media($grid-lg) {
+    width: 1080px;
+  }
 }
 
 //

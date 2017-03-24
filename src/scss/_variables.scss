@@ -28,3 +28,28 @@ $wct-footer-bg: #000C24;
 $body-base-font:  helvetica, arial, 'Hiragino Kaku Gothic ProN', meiryo, 'ms pgothic', sans-serif;
 $body-base-weight: 300;
 $wct-monospace: Consolas, 'Courier New', Courier, Monaco, monospace;
+
+
+//
+//------------------------
+// Grid setting
+//
+//
+
+$grid-sm: (
+  columns: 12,
+  gutter: 20px,
+  media: 640px,
+);
+
+$grid-md: (
+  columns: 12,
+  gutter: 20px,
+  media: 768px,
+);
+
+$grid-lg: (
+  columns: 12,
+  gutter: 20px,
+  media: 1081px,
+);
