@@ -33,9 +33,9 @@ body {
    * Single page, Page
    */
   &.single, &.page {
-    background-image: url(/wp-content/uploads/2017/03/header-top-sub.jpg);
-      background-position: calc(50% + 30vw) 0;
-      background-size: 1200px;
+    background-image: url(/wp-content/uploads/2017/03/header-sub.jpg);
+    background-position: calc(50% + 30vw) 0;
+    background-size: 1200px;
 
     @include grid-media($grid-sm) {
       background-position: calc(50% + 30vw) 0;
@@ -43,8 +43,8 @@ body {
     }
 
     @include grid-media($grid-lg) {
-      background-image: url(/wp-content/uploads/2017/03/header-top-sub.jpg),
-                        url(/wp-content/uploads/2017/03/header-top-bg-sub.jpg);
+      background-image: url(/wp-content/uploads/2017/03/header-sub.jpg),
+                        url(/wp-content/uploads/2017/03/header-sub-bg.jpg);
       background-position: calc(50% + 300px) 0, 0 0;
       background-size: auto, auto;
     }
