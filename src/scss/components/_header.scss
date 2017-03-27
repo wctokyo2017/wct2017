@@ -25,6 +25,73 @@ body {
   height: 275px;
   width: 100%;
 
+  // 衛星
+  &::before {
+    $satellite-width-pc: 82px;
+    $satellite-height-pc: 104px;
+    position: absolute;
+    animation: satellite 10s linear 2s infinite;
+    content: '';
+    display: block;
+    background-image: url(/wp-content/uploads/2017/03/satellite.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: ($satellite-width-pc / 2);
+    height: ($satellite-width-pc / 2);
+    top: 110px;
+    left: ($satellite-width-pc * -1);
+
+    @keyframes  satellite {
+      0% {
+        top: 110px;
+        left: ($satellite-width-pc / 2 * -1);
+      }
+      50%,
+      100% {
+        top: ($satellite-height-pc / 2 * -1);
+        left: 160px;
+      }
+    }
+
+    @include grid-media($grid-sm) {
+      width: ($satellite-width-pc / 1.5);
+      height: ($satellite-width-pc / 1.5);
+      top: 230px;
+      left: ($satellite-width-pc * -1);
+
+      @keyframes  satellite {
+        0% {
+          top: 230px;
+          left: ($satellite-width-pc / 1.5 * -1);
+        }
+        50%,
+        100% {
+          top: ($satellite-height-pc / 1.5 * -1);
+          left: 340px;
+        }
+      }
+    }
+
+    @include grid-media($grid-lg) {
+      width: $satellite-width-pc;
+      height: $satellite-height-pc;
+      top: -104px;
+      left: ($satellite-width-pc * -1);
+
+      @keyframes  satellite {
+        0% {
+          top: 260px;
+          left: ($satellite-width-pc * -1);
+        }
+        50%,
+        100% {
+          top: ($satellite-height-pc * -1);
+          left: 400px;
+        }
+      }
+    }
+  }
+
   @include grid-media($grid-sm) {
     height: 590px;
   }
@@ -76,5 +143,9 @@ body {
 }
 
 .menu-toggle {
+  margin: 0;
+}
+
+.menu > ul {
   margin: 0;
 }
