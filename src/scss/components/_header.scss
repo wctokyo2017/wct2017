@@ -1,40 +1,70 @@
 body {
-  background-image: url(/wp-content/uploads/2017/03/header-top.jpg);
   background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: 1358px;
-
-  @include grid-media($grid-xs) {
-    background-position: 50% -8px;
-    background-size: 1866px;
-  }
-
-  @include grid-media($grid-sm-s) {
-    background-position: 50% -18px;
-    background-size: 2375px;
-  }
-
-  @include grid-media($grid-sm) {
-    background-position: 50% -24px;
-    background-size: 2715px;
-  }
-
-  @include grid-media($grid-md) {
-    background-position: 50% -42px;
-    background-size: 3258px;
-  }
-
-  @include grid-media($grid-lg-s) {
-    background-position: 50% -75px;
-    background-size: 3902px;
-  }
 
   @include grid-media($grid-lg) {
-    background-image: url(/wp-content/uploads/2017/03/header-top.jpg),
-    url(/wp-content/uploads/2017/03/header-top-bg.jpg);
     background-repeat: no-repeat, repeat-x;
-    background-position: 50% -102px, 0 0;
-    background-size: auto, auto;
+  }
+
+  /**
+   * Home
+   */
+  &.home {
+    background-image: url(/wp-content/uploads/2017/03/header-top.jpg);
+    background-position: 50% 0;
+    background-size: 1358px;
+
+    @include grid-media($grid-xs) {
+      background-position: 50% -8px;
+      background-size: 1866px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      background-position: 50% -18px;
+      background-size: 2375px;
+    }
+
+    @include grid-media($grid-sm) {
+      background-position: 50% -24px;
+      background-size: 2715px;
+    }
+
+    @include grid-media($grid-md) {
+      background-position: 50% -42px;
+      background-size: 3258px;
+    }
+
+    @include grid-media($grid-lg-s) {
+      background-position: 50% -75px;
+      background-size: 3902px;
+    }
+
+    @include grid-media($grid-lg) {
+      background-image: url(/wp-content/uploads/2017/03/header-top.jpg),
+                        url(/wp-content/uploads/2017/03/header-top-bg.jpg);
+      background-position: 50% -102px, 0 0;
+      background-size: auto, auto;
+    }
+  }
+
+  /**
+   * Single page, Page
+   */
+  &.single, &.page {
+    background-image: url(/wp-content/uploads/2017/03/header-sub.jpg);
+    background-position: calc(50% + 30vw) 0;
+    background-size: 1200px;
+
+    @include grid-media($grid-sm) {
+      background-position: calc(50% + 30vw) 0;
+      background-size: 2470px;
+    }
+
+    @include grid-media($grid-lg) {
+      background-image: url(/wp-content/uploads/2017/03/header-sub.jpg),
+                        url(/wp-content/uploads/2017/03/header-sub-bg.jpg);
+      background-position: calc(50% + 300px) 0, 0 0;
+      background-size: auto, auto;
+    }
   }
 }
 
@@ -42,31 +72,119 @@ body {
   @extend .grid-container;
   padding: 0;
   position: relative;
-  height: 275px;
   width: 100%;
 
-  @include grid-media($grid-xs) {
-    height: 350px;
+  /**
+   * Home
+   */
+  .home & {
+    height: 275px;
+
+    @include grid-media($grid-xs) {
+      height: 350px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      height: 440px;
+    }
+
+    @include grid-media($grid-sm) {
+      height: 495px;
+    }
+
+    @include grid-media($grid-md) {
+      height: 570px;
   }
 
-  @include grid-media($grid-sm-s) {
-    height: 440px;
+    @include grid-media($grid-lg-s) {
+      height: 645px;
+    }
+
+    @include grid-media($grid-lg) {
+      height: 745px;
+    }
+
+    // 衛星
+    &::before {
+      $satellite-width-pc: 82px;
+      $satellite-height-pc: 104px;
+      position: absolute;
+      animation: satellite 10s linear 2s infinite;
+      content: '';
+      display: block;
+      background-image: url(/wp-content/uploads/2017/03/satellite.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: ($satellite-width-pc / 2);
+      height: ($satellite-width-pc / 2);
+      top: 110px;
+      left: ($satellite-width-pc * -1);
+
+      @keyframes  satellite {
+        0% {
+          top: 110px;
+          left: ($satellite-width-pc / 2 * -1);
+        }
+        50%,
+        100% {
+          top: ($satellite-height-pc / 2 * -1);
+          left: 160px;
+        }
+      }
+
+      @include grid-media($grid-sm) {
+        width: ($satellite-width-pc / 1.5);
+        height: ($satellite-width-pc / 1.5);
+        top: 230px;
+        left: ($satellite-width-pc * -1);
+
+        @keyframes  satellite {
+          0% {
+            top: 230px;
+            left: ($satellite-width-pc / 1.5 * -1);
+          }
+          50%,
+          100% {
+            top: ($satellite-height-pc / 1.5 * -1);
+            left: 340px;
+          }
+        }
+      }
+
+      @include grid-media($grid-lg) {
+        width: $satellite-width-pc;
+        height: $satellite-height-pc;
+        top: -104px;
+        left: ($satellite-width-pc * -1);
+
+        @keyframes  satellite {
+          0% {
+            top: 260px;
+            left: ($satellite-width-pc * -1);
+          }
+          50%,
+          100% {
+            top: ($satellite-height-pc * -1);
+            left: 400px;
+          }
+        }
+      }
+    }
   }
 
-  @include grid-media($grid-sm) {
-    height: 495px;
-  }
+  /**
+   * Single page, Page
+   */
+  .single &, .page & {
+    height: 200px;
 
-  @include grid-media($grid-md) {
-    height: 570px;
-  }
+    @include grid-media($grid-sm) {
+      height: 430px;
+    }
 
-  @include grid-media($grid-lg-s) {
-    height: 645px;
-  }
-
-  @include grid-media($grid-lg) {
-    height: 745px;
+    @include grid-media($grid-lg) {
+      height: 450px;
+    }
   }
 }
 
@@ -76,54 +194,16 @@ body {
 
 .site-title {
   background-image: url(/wp-content/uploads/2017/03/top-logo.png),
-  url(/wp-content/uploads/2017/03/top-theme.png),
-  url(/wp-content/uploads/2017/03/top-date.png);
+                    url(/wp-content/uploads/2017/03/top-theme.png),
+                    url(/wp-content/uploads/2017/03/top-date.png);
   background-repeat: no-repeat;
-  background-position: 50% 30px, 50% 107px, 50% 165px;
-  background-size: 258px, 188px, 230px;
   display: block;
-  height: 220px;
   position: absolute;
-  top: 40px;
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
-
-  @include grid-media($grid-xs) {
-    background-position: 50% 50px, 50% 150px, 50% 235px;
-    background-size: 335px, 185px, 247px;
-    height: 295px;
-  }
-
-  @include grid-media($grid-sm-s) {
-    background-position: 50% 60px, 50% 195px, 50% 305px;
-    background-size: 420px, 235px, 320px;
-    height: 380px;
-  }
-
-  @include grid-media($grid-sm) {
-    background-position: 50% 75px, 50% 223px, 50% 350px;
-    background-size: 486px, 268px, 358px;
-    height: 435px;
-  }
-
-  @include grid-media($grid-md) {
-    background-position: 50% 75px, 50% 250px, 50% 405px;
-    background-size: 582px, 323px, 435px;
-    height: 505px;
-    top: 50px;
-  }
-
-  @include grid-media($grid-lg-s) {
-    background-position: 50% 80px, 50% 290px, 50% 465px;
-    background-size: 670px, 365px, 425px;
-    height: 570px;
-  }
-
-  @include grid-media($grid-lg) {
-    background-position: 50% 93px, 50% 337px, 50% 542px;
-    background-size: auto;
-    height: 670px;
-  }
+  max-width :1080px;
+  left: 50%;
+  transform: translateX(-50%);
 
   a {
     color: transparent;
@@ -132,8 +212,83 @@ body {
     height: 100%;
     width: 100%;
   }
+
+  /**
+   * Home
+   */
+  .home & {
+    background-position: 50% 30px, 50% 107px, 50% 165px;
+    background-size: 258px, 188px, 230px;
+    height: 220px;
+    top: 40px;
+
+    @include grid-media($grid-xs) {
+      background-position: 50% 50px, 50% 150px, 50% 235px;
+      background-size: 335px, 185px, 247px;
+      height: 295px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      background-position: 50% 60px, 50% 195px, 50% 305px;
+      background-size: 420px, 235px, 320px;
+      height: 380px;
+    }
+
+    @include grid-media($grid-sm) {
+      background-position: 50% 75px, 50% 223px, 50% 350px;
+      background-size: 486px, 268px, 358px;
+      height: 435px;
+    }
+
+    @include grid-media($grid-md) {
+      background-position: 50% 75px, 50% 250px, 50% 405px;
+      background-size: 582px, 323px, 435px;
+      height: 505px;
+      top: 50px;
+    }
+
+    @include grid-media($grid-lg-s) {
+      background-position: 50% 80px, 50% 290px, 50% 465px;
+      background-size: 670px, 365px, 425px;
+      height: 570px;
+    }
+
+    @include grid-media($grid-lg) {
+      background-position: 50% 93px, 50% 337px, 50% 542px;
+      background-size: auto;
+      height: 670px;
+    }
+  }
+
+  /**
+   * Single page, Page
+   */
+  .single &, .page & {
+    background-position: 12px 0, 12px 55px, 12px 100px;
+    background-size: 180px;
+    height: 135px;
+    top: 50px;
+
+    @include grid-media($grid-sm) {
+      background-position: 40px 0, 40px 116px, 40px 246px;
+      background-size: 380px;
+      height: 320px;
+      top: 85px;
+    }
+
+    @include grid-media($grid-lg) {
+      background-position: 55px 0, 55px 120px, 55px 265px;
+      background-size: 385px;
+      height: 340px;
+      top: 90px;
+    }
+  }
 }
 
 .menu-toggle {
+  margin: 0;
+}
+
+.menu > ul {
   margin: 0;
 }
