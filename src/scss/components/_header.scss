@@ -94,7 +94,7 @@ body {
 
     @include grid-media($grid-md) {
       height: 570px;
-  }
+    }
 
     @include grid-media($grid-lg-s) {
       height: 645px;
@@ -109,62 +109,100 @@ body {
       $satellite-width-pc: 82px;
       $satellite-height-pc: 104px;
       position: absolute;
-      animation: satellite 10s linear 2s infinite;
+      animation: satellite 60s linear 2s infinite;
       content: '';
       display: block;
       background-image: url(/wp-content/uploads/2017/03/satellite.png);
       background-repeat: no-repeat;
       background-size: contain;
-      width: ($satellite-width-pc / 2);
-      height: ($satellite-width-pc / 2);
+      width: ($satellite-width-pc / 3.4);
+      height: ($satellite-height-pc / 3.4);
       top: 110px;
       left: ($satellite-width-pc * -1);
 
       @keyframes  satellite {
         0% {
           top: 110px;
-          left: ($satellite-width-pc / 2 * -1);
+          left: ($satellite-width-pc / 3.4 * -1);
         }
         50%,
         100% {
-          top: ($satellite-height-pc / 2 * -1);
+          top: ($satellite-height-pc / 3.4 * -1);
           left: 160px;
         }
       }
 
-      @include grid-media($grid-sm) {
-        width: ($satellite-width-pc / 1.5);
-        height: ($satellite-width-pc / 1.5);
-        top: 230px;
+      @include grid-media($grid-sm-s) {
+        width: ($satellite-width-pc / 2.8);
+        height: ($satellite-height-pc / 2.8);
+        top: 170px;
         left: ($satellite-width-pc * -1);
 
-        @keyframes  satellite {
+        @keyframes satellite {
           0% {
-            top: 230px;
-            left: ($satellite-width-pc / 1.5 * -1);
+            top: 170px;
+            left: ($satellite-width-pc / 2.8 * -1);
           }
           50%,
           100% {
-            top: ($satellite-height-pc / 1.5 * -1);
+            top: ($satellite-height-pc / 2.8 * -1);
+            left: 250px;
+          }
+        }
+      }
+
+      @include grid-media($grid-sm) {
+        width: ($satellite-width-pc / 2.3);
+        height: ($satellite-height-pc / 2.3);
+        top: 230px;
+        left: ($satellite-width-pc * -1);
+
+        @keyframes satellite {
+          0% {
+            top: 230px;
+            left: ($satellite-width-pc / 2.3 * -1);
+          }
+          50%,
+          100% {
+            top: ($satellite-height-pc / 2.3 * -1);
             left: 340px;
           }
         }
       }
 
-      @include grid-media($grid-lg) {
-        width: $satellite-width-pc;
-        height: $satellite-height-pc;
-        top: -104px;
+      @include grid-media($grid-md) {
+        width: ($satellite-width-pc / 1.9);
+        height: ($satellite-height-pc / 1.9);
+        top: 245px;
         left: ($satellite-width-pc * -1);
 
-        @keyframes  satellite {
+        @keyframes satellite {
           0% {
-            top: 260px;
-            left: ($satellite-width-pc * -1);
+            top: 245px;
+            left: ($satellite-width-pc / 1.9 * -1);
           }
           50%,
           100% {
-            top: ($satellite-height-pc * -1);
+            top: ($satellite-height-pc / 1.9 * -1);
+            left: 370px;
+          }
+        }
+      }
+
+      @include grid-media($grid-lg) {
+        width: ($satellite-width-pc / 1.4);
+        height: ($satellite-height-pc / 1.4);
+        top: 260px;
+        left: ($satellite-width-pc * -1);
+
+        @keyframes satellite {
+          0% {
+            top: 260px;
+            left: ($satellite-width-pc / 1.4 * -1);
+          }
+          50%,
+          100% {
+            top: ($satellite-height-pc / 1.4 * -1);
             left: 400px;
           }
         }
