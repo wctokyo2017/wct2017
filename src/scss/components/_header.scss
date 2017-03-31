@@ -42,7 +42,7 @@ body {
       background-image: url(/wp-content/uploads/2017/03/header-top.jpg),
                         url(/wp-content/uploads/2017/03/header-top-bg.jpg);
       background-position: 50% -102px, 0 0;
-      background-size: auto, auto;
+      background-size: 4580px, 10px;
     }
   }
 
@@ -51,21 +51,48 @@ body {
    */
   &.single, &.page {
     background-image: url(/wp-content/uploads/2017/03/header-sub.jpg);
-    background-position: calc(50% + 30vw) 0;
-    background-size: 1200px;
+    background-position: calc(50% + 90px) 0;
+    background-size: 810px;
+
+    @include grid-media($grid-xs) {
+      background-position: calc(50% + 100px) -10px;
+      background-size: 963px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      background-position: calc(50% + 120px) -20px;
+      background-size: 1468px;
+    }
 
     @include grid-media($grid-sm) {
-      background-position: calc(50% + 30vw) 0;
-      background-size: 2470px;
+      background-position: calc(50% + 150px) -55px;
+      background-size: 1878px;
+    }
+
+    @include grid-media($grid-md) {
+      background-position: calc(50% + 185px) -80px;
+      background-size: 2255px;
+    }
+
+    @include grid-media($grid-lg-s) {
+      background-position: calc(50% + 220px) -95px;
+      background-size: 2300px;
     }
 
     @include grid-media($grid-lg) {
       background-image: url(/wp-content/uploads/2017/03/header-sub.jpg),
                         url(/wp-content/uploads/2017/03/header-sub-bg.jpg);
-      background-position: calc(50% + 300px) 0, 0 0;
-      background-size: auto, auto;
+      background-position: calc(50% + 235px) -135px, 0 -135px;
+      background-size: 2700px, 10px;
     }
   }
+}
+
+.menu {
+  display: none;
+}
+.menu-toggle {
+  display: none;
 }
 
 .site-header {
@@ -214,14 +241,30 @@ body {
    * Single page, Page
    */
   .single &, .page & {
-    height: 200px;
+    height: 195px;
+
+    @include grid-media($grid-xs) {
+      height: 225px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      height: 310px;
+    }
 
     @include grid-media($grid-sm) {
+      height: 380px;
+    }
+
+    @include grid-media($grid-md) {
+      height: 420px;
+    }
+
+    @include grid-media($grid-lg-s) {
       height: 430px;
     }
 
     @include grid-media($grid-lg) {
-      height: 450px;
+      height: 460px;
     }
   }
 }
@@ -231,17 +274,11 @@ body {
 }
 
 .site-title {
-  background-image: url(/wp-content/uploads/2017/03/top-logo.png),
-                    url(/wp-content/uploads/2017/03/top-theme.png),
-                    url(/wp-content/uploads/2017/03/top-date.png);
   background-repeat: no-repeat;
   display: block;
   position: absolute;
   margin: 0 auto;
   width: 100%;
-  max-width :1080px;
-  left: 50%;
-  transform: translateX(-50%);
 
   a {
     color: transparent;
@@ -255,6 +292,9 @@ body {
    * Home
    */
   .home & {
+    background-image: url(/wp-content/uploads/2017/03/top-logo.png),
+                      url(/wp-content/uploads/2017/03/top-theme.png),
+                      url(/wp-content/uploads/2017/03/top-date.png);
     background-position: 50% 30px, 50% 107px, 50% 165px;
     background-size: 258px, 188px, 230px;
     height: 220px;
@@ -302,23 +342,49 @@ body {
    * Single page, Page
    */
   .single &, .page & {
-    background-position: 12px 0, 12px 55px, 12px 100px;
-    background-size: 180px;
-    height: 135px;
-    top: 50px;
+    background-image: url(/wp-content/uploads/2017/03/top-logo.png),
+                      url(/wp-content/uploads/2017/03/sub-theme.png),
+                      url(/wp-content/uploads/2017/03/top-date.png);
+    background-position: calc(50% - 60px) 13px, calc(50% - 60px) 68px, calc(50% - 60px) 110px;
+    background-size: 180px, 145px, 182px;
+    height: 155px;
+    top: 40px;
+
+    @include grid-media($grid-xs) {
+      background-position: calc(50% - 70px) 15px, calc(50% - 70px) 80px, calc(50% - 70px) 125px;
+      background-size: 210px, 172px, 212px;
+      height: 185px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      background-position: calc(50% - 105px) 45px, calc(50% - 105px) 120px, calc(50% - 105px) 205px;
+      background-size: 245px, 205px, 250px;
+      height: 270px;
+    }
 
     @include grid-media($grid-sm) {
-      background-position: 40px 0, 40px 116px, 40px 246px;
-      background-size: 380px;
-      height: 320px;
-      top: 85px;
+      background-position: calc(50% - 130px) 35px, calc(50% - 130px) 135px, calc(50% - 130px) 245px;
+      background-size: 318px, 262px, 322px;
+      height: 330px;
+      top: 50px;
+    }
+
+    @include grid-media($grid-md) {
+      background-position: calc(50% - 150px) 35px, calc(50% - 150px) 152px, calc(50% - 150px) 285px;
+      background-size: 378px, 314px, 380px;
+      height: 370px;
+    }
+
+    @include grid-media($grid-lg-s) {
+      background-position: calc(50% - 195px) 45px, calc(50% - 195px) 165px, calc(50% - 195px) 285px;
+      background-size: 386px, 318px, 392px;
+      height: 380px;
     }
 
     @include grid-media($grid-lg) {
-      background-position: 55px 0, 55px 120px, 55px 265px;
-      background-size: 385px;
-      height: 340px;
-      top: 90px;
+      background-position: calc(50% - 240px) 55px, calc(50% - 240px) 175px, calc(50% - 240px) 315px;
+      background-size: 386px, 318px, 392px;
+      height: 410px;
     }
   }
 }
