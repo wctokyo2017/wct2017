@@ -9,7 +9,7 @@ body {
    * Home
    */
   &.home {
-    background-image: url(/wp-content/uploads/2017/03/header-top.jpg);
+    background-image: url(#{$img-path}header-top.jpg);
     background-position: 50% 0;
     background-size: 1358px;
 
@@ -39,8 +39,8 @@ body {
     }
 
     @include grid-media($grid-lg) {
-      background-image: url(/wp-content/uploads/2017/03/header-top.jpg),
-                        url(/wp-content/uploads/2017/03/header-top-bg.jpg);
+      background-image: url(#{$img-path}header-top.jpg),
+                        url(#{$img-path}header-top-bg.jpg);
       background-position: 50% -102px, 0 0;
       background-size: 4580px, 10px;
     }
@@ -50,7 +50,7 @@ body {
    * Single page, Page
    */
   &.single, &.page {
-    background-image: url(/wp-content/uploads/2017/03/header-sub.jpg);
+    background-image: url(#{$img-path}header-sub.jpg);
     background-position: calc(50% + 90px) 0;
     background-size: 810px;
 
@@ -80,8 +80,8 @@ body {
     }
 
     @include grid-media($grid-lg) {
-      background-image: url(/wp-content/uploads/2017/03/header-sub.jpg),
-                        url(/wp-content/uploads/2017/03/header-sub-bg.jpg);
+      background-image: url(#{$img-path}header-sub.jpg),
+                        url(#{$img-path}header-sub-bg.jpg);
       background-position: calc(50% + 235px) -135px, 0 -135px;
       background-size: 2700px, 10px;
     }
