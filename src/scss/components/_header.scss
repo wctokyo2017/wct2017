@@ -297,7 +297,6 @@ body {
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-sub-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
-
     background-position: 50% 23px, 50% 100px, 50% 123px, 50% 113px;
     background-size: 258px, 56px, 188px, 235px;
     height: 220px;
@@ -325,7 +324,6 @@ body {
       background-position: 50% 75px, 50% 253px, 50% 300px, 50% 325px;
       background-size: 582px, 98px, 323px, 440px;
       height: 505px;
-      top: 0;
     }
 
     @include grid-media($grid-lg-s) {
@@ -345,48 +343,55 @@ body {
    * Single page, Page
    */
   .single &, .page & {
-    background-image: url(/wp-content/uploads/2017/03/top-logo.png),
-                      url(/wp-content/uploads/2017/03/sub-theme.png),
-                      url(/wp-content/uploads/2017/03/top-date.png);
-    background-position: calc(50% - 60px) 13px, calc(50% - 60px) 68px, calc(50% - 60px) 110px;
-    background-size: 180px, 145px, 182px;
+    background-image: url(#{$img-path}wct2017-logo.svg),
+                      url(#{$img-path}wct2017-theme.svg),
+                      url(#{$img-path}wct2017-sub-theme.svg),
+                      url(#{$img-path}wct2017-date.svg);
+    $grid-posX: calc(50% - 58px);
+    background-position: $grid-posX 5px, $grid-posX 60px, $grid-posX 77px, $grid-posX 65px;
+    background-size: 180px, 40px, 145px, 190px;
     height: 155px;
-    top: 40px;
+    top: 0;
 
     @include grid-media($grid-xs) {
-      background-position: calc(50% - 70px) 15px, calc(50% - 70px) 80px, calc(50% - 70px) 125px;
-      background-size: 210px, 172px, 212px;
+      $grid-xs-posX: calc(50% - 70px);
+      background-position: $grid-xs-posX 5px, $grid-xs-posX 70px, $grid-xs-posX 90px, $grid-xs-posX 80px;
+      background-size: 210px, 50px, 175px, 215px;
       height: 185px;
     }
 
     @include grid-media($grid-sm-s) {
-      background-position: calc(50% - 105px) 45px, calc(50% - 105px) 120px, calc(50% - 105px) 205px;
-      background-size: 245px, 205px, 250px;
+      $grid-sm-s-posX: calc(50% - 105px);
+      background-position: $grid-sm-s-posX 35px, $grid-sm-s-posX 110px, $grid-sm-s-posX 135px, $grid-sm-s-posX 150px;
+      background-size: 245px, 57px, 205px, 260px;
       height: 270px;
     }
 
     @include grid-media($grid-sm) {
-      background-position: calc(50% - 130px) 35px, calc(50% - 130px) 135px, calc(50% - 130px) 245px;
-      background-size: 318px, 262px, 322px;
+      $grid-sm-posX: calc(50% - 130px);
+      background-position: $grid-sm-posX 35px, $grid-sm-posX 133px, $grid-sm-posX 165px, $grid-sm-posX 185px;
+      background-size: 318px, 73px, 265px, 325px;
       height: 330px;
-      top: 50px;
     }
 
     @include grid-media($grid-md) {
-      background-position: calc(50% - 150px) 35px, calc(50% - 150px) 152px, calc(50% - 150px) 285px;
-      background-size: 378px, 314px, 380px;
+      $grid-md-posX: calc(50% - 150px);
+      background-position: $grid-md-posX 40px, $grid-md-posX 160px, $grid-md-posX 198px, $grid-md-posX 220px;
+      background-size: 378px, 88px, 314px, 385px;
       height: 370px;
     }
 
     @include grid-media($grid-lg-s) {
-      background-position: calc(50% - 195px) 45px, calc(50% - 195px) 165px, calc(50% - 195px) 285px;
-      background-size: 386px, 318px, 392px;
+      $grid-lg-s-posX: calc(50% - 190px);
+      background-position: $grid-lg-s-posX 30px, $grid-lg-s-posX 150px, $grid-lg-s-posX 190px, $grid-lg-s-posX 205px;
+      background-size: 386px, 89px, 318px, 395px;
       height: 380px;
     }
 
     @include grid-media($grid-lg) {
-      background-position: calc(50% - 240px) 55px, calc(50% - 240px) 175px, calc(50% - 240px) 315px;
-      background-size: 386px, 318px, 392px;
+      $grid-lg-posX: calc(50% - 240px);
+      background-position: $grid-lg-posX 45px, $grid-lg-posX 165px, $grid-lg-posX 205px, $grid-lg-posX 230px;
+      background-size: 386px, 89px, 318px, 395px;
       height: 410px;
     }
   }
