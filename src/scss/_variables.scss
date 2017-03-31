@@ -30,10 +30,44 @@ $body-base-weight: 300;
 $wct-monospace: Consolas, 'Courier New', Courier, Monaco, monospace;
 
 
-
 //
 //------------------------
-// Font setting
+// Grid setting
 //
 //
-$break-point: 782px;
+
+$grid-xs: (
+  columns: 12,
+  gutter: 10px,
+  media: 380px,
+);
+
+$grid-sm-s: (
+  columns: 12,
+  gutter: 10px,
+  media: 500px,
+);
+
+$grid-sm: (
+  columns: 12,
+  gutter: 20px,
+  media: 640px,
+);
+
+$grid-md: (
+  columns: 12,
+  gutter: 20px,
+  media: 768px,
+);
+
+$grid-lg-s: (
+  columns: 12,
+  gutter: 20px,
+  media: 920px,
+);
+
+$grid-lg: (
+  columns: 12,
+  gutter: 20px,
+  media: 1081px,
+);

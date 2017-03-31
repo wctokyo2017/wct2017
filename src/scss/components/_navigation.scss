@@ -43,7 +43,7 @@ body{
   z-index: 9999;
   .admin-bar & {
     top: 32px;
-    @media only screen and ( max-width: $break-point) {
+    @media only screen and ( max-width: $grid-md) {
       top: 46px;
     }
   }
