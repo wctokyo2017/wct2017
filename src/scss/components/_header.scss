@@ -139,7 +139,7 @@ body {
       animation: satellite 60s linear 2s infinite;
       content: '';
       display: block;
-      background-image: url(/wp-content/uploads/2017/03/satellite.png);
+      background-image: url(#{$img-path}satellite.svg);
       background-repeat: no-repeat;
       background-size: contain;
       width: ($satellite-width-pc / 3.4);
@@ -293,48 +293,50 @@ body {
    * Home
    */
   .home & {
-    background-image: url(/wp-content/uploads/2017/03/top-logo.png),
-                      url(/wp-content/uploads/2017/03/top-theme.png),
-                      url(/wp-content/uploads/2017/03/top-date.png);
-    background-position: 50% 30px, 50% 107px, 50% 165px;
-    background-size: 258px, 188px, 230px;
+    background-image: url(#{$img-path}wct2017-logo.svg),
+                      url(#{$img-path}wct2017-theme.svg),
+                      url(#{$img-path}wct2017-sub-theme.svg),
+                      url(#{$img-path}wct2017-date.svg);
+
+    background-position: 50% 23px, 50% 100px, 50% 123px, 50% 113px;
+    background-size: 258px, 56px, 188px, 235px;
     height: 220px;
-    top: 40px;
+    top: 0;
 
     @include grid-media($grid-xs) {
-      background-position: 50% 50px, 50% 150px, 50% 235px;
-      background-size: 335px, 185px, 247px;
+      background-position: 50% 40px, 50% 140px, 50% 168px, 50% 180px;
+      background-size: 335px, 56px, 185px, 255px;
       height: 295px;
     }
 
     @include grid-media($grid-sm-s) {
-      background-position: 50% 60px, 50% 195px, 50% 305px;
-      background-size: 420px, 235px, 320px;
+      background-position: 50% 55px, 50% 185px, 50% 220px, 50% 235px;
+      background-size: 420px, 71px, 235px, 325px;
       height: 380px;
     }
 
     @include grid-media($grid-sm) {
-      background-position: 50% 75px, 50% 223px, 50% 350px;
-      background-size: 486px, 268px, 358px;
+      background-position: 50% 70px, 50% 215px, 50% 253px, 50% 273px;
+      background-size: 486px, 81px, 268px, 365px;
       height: 435px;
     }
 
     @include grid-media($grid-md) {
-      background-position: 50% 75px, 50% 250px, 50% 405px;
-      background-size: 582px, 323px, 435px;
+      background-position: 50% 75px, 50% 253px, 50% 300px, 50% 325px;
+      background-size: 582px, 98px, 323px, 440px;
       height: 505px;
-      top: 50px;
+      top: 0;
     }
 
     @include grid-media($grid-lg-s) {
-      background-position: 50% 80px, 50% 290px, 50% 465px;
-      background-size: 670px, 365px, 425px;
+      background-position: 50% 80px, 50% 293px, 50% 343px, 50% 388px;
+      background-size: 670px, 110px, 365px, 430px;
       height: 570px;
     }
 
     @include grid-media($grid-lg) {
-      background-position: 50% 93px, 50% 337px, 50% 542px;
-      background-size: auto;
+      background-position: 50% 90px, 50% 335px, 50% 395px, 50% 450px;
+      background-size: 778px, 129px, 428px, 505px;
       height: 670px;
     }
   }
