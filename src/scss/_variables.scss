@@ -54,10 +54,12 @@ $grid-sm: (
   media: 640px,
 );
 
+$admin-bar-break-point: 768px;
+
 $grid-md: (
   columns: 12,
   gutter: 20px,
-  media: 768px,
+  media: $admin-bar-break-point,
 );
 
 $grid-lg-s: (
