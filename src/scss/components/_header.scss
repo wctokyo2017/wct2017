@@ -150,11 +150,11 @@ body {
       @keyframes  satellite {
         0% {
           top: 110px;
-          left: ($satellite-width-pc / 3.4 * -1);
+          left: ($satellite-width-pc / 3.4 * -2);
         }
         50%,
         100% {
-          top: ($satellite-height-pc / 3.4 * -1);
+          top: ($satellite-height-pc / 3.4 * -3);
           left: 160px;
         }
       }
@@ -165,14 +165,14 @@ body {
         top: 170px;
         left: ($satellite-width-pc * -1);
 
-        @keyframes satellite {
+        @keyframes  satellite {
           0% {
             top: 170px;
-            left: ($satellite-width-pc / 2.8 * -1);
+            left: ($satellite-width-pc / 2.8 * -2);
           }
           50%,
           100% {
-            top: ($satellite-height-pc / 2.8 * -1);
+            top: ($satellite-height-pc / 2.8 * -3);
             left: 250px;
           }
         }
@@ -184,14 +184,14 @@ body {
         top: 230px;
         left: ($satellite-width-pc * -1);
 
-        @keyframes satellite {
+        @keyframes  satellite {
           0% {
             top: 230px;
-            left: ($satellite-width-pc / 2.3 * -1);
+            left: ($satellite-width-pc / 2.3 * -2);
           }
           50%,
           100% {
-            top: ($satellite-height-pc / 2.3 * -1);
+            top: ($satellite-height-pc / 2.3 * -3);
             left: 340px;
           }
         }
@@ -203,33 +203,34 @@ body {
         top: 245px;
         left: ($satellite-width-pc * -1);
 
-        @keyframes satellite {
+        @keyframes  satellite {
           0% {
             top: 245px;
-            left: ($satellite-width-pc / 1.9 * -1);
+            left: ($satellite-width-pc / 1.9 * -2);
           }
           50%,
           100% {
-            top: ($satellite-height-pc / 1.9 * -1);
+            top: ($satellite-height-pc / 1.9 * -3);
             left: 370px;
           }
         }
       }
 
       @include grid-media($grid-lg) {
+
         width: ($satellite-width-pc / 1.4);
         height: ($satellite-height-pc / 1.4);
         top: 260px;
         left: ($satellite-width-pc * -1);
 
-        @keyframes satellite {
+        @keyframes  satellite {
           0% {
-            top: 260px;
-            left: ($satellite-width-pc / 1.4 * -1);
+          top: 260px;
+            left: ($satellite-width-pc / 1.4 * -2);
           }
           50%,
           100% {
-            top: ($satellite-height-pc / 1.4 * -1);
+            top: ($satellite-height-pc / 1.4 * -3);
             left: 400px;
           }
         }
