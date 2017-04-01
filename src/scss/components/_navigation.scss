@@ -97,29 +97,32 @@ body{
   .menu-all-pages-container{
     @extend .grid-container;
     height: $navigation-height;
-    .menu > li{
-      height: $navigation-height;
-      display: inline-block;
-      float: left;
-      & > .sub-menu {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: $navigation-height;
-        width: auto;
-        & > li {
+    & > .menu{
+      display: block;
+      & > li{
+        height: $navigation-height;
+        display: inline-block;
+        float: left;
+        & > .sub-menu {
+          display: none;
+          position: absolute;
+          left: 0;
+          top: $navigation-height;
           width: auto;
-          white-space: nowrap;
-          position: relative;
-          // 3rd level
-          & > .sub-menu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-          }
-          &:hover > .sub-menu {
-            display: block;
+          & > li {
+            width: auto;
+            white-space: nowrap;
+            position: relative;
+            // 3rd level
+            & > .sub-menu {
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 100%;
+            }
+            &:hover > .sub-menu {
+              display: block;
+            }
           }
         }
       }
