@@ -10,7 +10,7 @@ body {
    */
   &.home {
     background-image: url(#{$img-path}header-top.jpg);
-    background-position: 50% 0;
+    background-position: 50% $navigation-height;
     background-size: 1358px;
 
     @include grid-media($grid-xs) {

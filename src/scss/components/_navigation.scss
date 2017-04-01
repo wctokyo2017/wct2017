@@ -1,9 +1,5 @@
-$navigation-height: 50px;
-$navigation-base-bg: $wct-bg-color;
-$navigation-secondary-bg: #0072A6;
-$navigation-link-pad: 20px;
 body{
-  padding-top: $navigation-height;
+  margin-top: $navigation-height;
 }
 .siteheader{
   position: relative;
@@ -63,15 +59,11 @@ body{
   .menu-all-pages-container{
     position: relative;
     padding: 0;
-    height: $navigation-height;
     .menu{
     }
     // First label
     & > .menu > li{
       position: relative;
-      display: inline-block;
-      float: left;
-      height: $navigation-height;
       &.right{
         position: absolute;
         right: 0;
@@ -82,28 +74,15 @@ body{
       }
       // Second level
       & > .sub-menu{
-        display: none;
-        position: absolute;
-        left: 0;
-        top: $navigation-height;
-        width: auto;
         background: $navigation-base-bg;
         & > li{
           width: auto;
-          white-space: nowrap;
           position: relative;
           & > a{
           }
           // 3rd level
           & > .sub-menu{
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
             background: $navigation-base-bg;
-          }
-          &:hover > .sub-menu{
-            display: block;
           }
         }
       }
@@ -117,6 +96,34 @@ body{
 .main-navigation{
   .menu-all-pages-container{
     @extend .grid-container;
+    height: $navigation-height;
+    .menu > li{
+      height: $navigation-height;
+      display: inline-block;
+      float: left;
+      & > .sub-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: $navigation-height;
+        width: auto;
+        & > li {
+          width: auto;
+          white-space: nowrap;
+          position: relative;
+          // 3rd level
+          & > .sub-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+          }
+          &:hover > .sub-menu {
+            display: block;
+          }
+        }
+      }
+    }
   }
   .menu{
     @extend %header-bg;
@@ -126,19 +133,47 @@ body{
 
 .main-small-navigation{
   background: $navigation-base-bg;
+  @extend %header-bg;
   .menu-all-pages-container{
+    z-index: 10;
+    position: relative;
+    top: -1 * $navigation-height;
+    padding-top: $navigation-height;
     @extend %header-bg;
+    max-height: 400px;
+    max-height: calc(100vh - #{$navigation-height});
+    overflow-y: scroll;;
     & > .menu > li{
+      display: none;
       &.right{
+        display: inline-block;
         text-align: center;
         width: 50%;
-        top: -1 * $navigation-height;
+        top: 0;
       }
     }
   }
   .menu-toggle{
+    position: relative;
+    z-index: 11;
     width: 50%;
     text-align: center;
+    cursor: pointer;
     @extend %link;
+    &.toggled-on + div + .menu-all-pages-container .menu{
+      & > li{
+        display: block;
+      }
+    }
+  }
+  .menu{
+    display: block !important;
+  }
+}
+
+// Fix admin bar on min screen
+#wpadminbar{
+  @media only screen and (max-width: $admin-bar-break-point) {
+    position: fixed;
   }
 }
