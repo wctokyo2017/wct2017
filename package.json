@@ -9,6 +9,7 @@
     "gulp": "gulp",
     "server": "gulp default --mode server",
     "production": "gulp deploy",
+    "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "WordCamp Tokyo 20167 team",
@@ -21,6 +22,7 @@
     "bourbon": "^4.2.7",
     "bourbon-neat": "^2.0.0",
     "browser-sync": "latest",
+    "font-awesome": "^4.7.0",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-changed": "^1.3.0",

@@ -121,6 +121,18 @@ body{
         @include wct-small-screen(){
           display: none;
         }
+        // icon
+        &.menu-item-has-children > a{
+          &:after{
+            @extend %fa;
+            margin-left: 0.5em;
+            content: $fa-var-caret-down;
+          }
+          &:hover:after{
+            content: $fa-var-caret-up;
+          }
+        }
+        // 2nd level
         & > .sub-menu {
           display: none;
           position: absolute;
@@ -173,16 +185,49 @@ body{
     overflow-y: scroll;
     & > .menu > li{
       display: none;
-      background-color: $navigation-secondary-bg;
+      background-color: $navigation-submenu-bg;
       border-bottom: 1px solid $navigation-submenu-border;
+      &:first-child{
+        border-top: 1px solid $navigation-submenu-border;
+      }
       &:last-child{
         border-bottom: none;
       }
       &.right{
+        background-color: $navigation-secondary-bg;
         display: inline-block;
         text-align: center;
         width: 50%;
         top: 0;
+      }
+      & > .sub-menu{
+        & > li{
+          &:first-child{
+            border-top: 1px solid $navigation-submenu-border;
+          }
+          & > a{
+            &:before{
+              @extend %fa;
+              content: $fa-var-caret-right;
+              margin-right: 0.5em;
+            }
+          }
+          & > .sub-menu{
+            & > li{
+              &:first-child{
+                border-top: 1px solid $navigation-submenu-border;
+              }
+              & > a{
+                &:before{
+                  @extend %fa;
+                  content: $fa-var-caret-right;
+                  color: transparent;
+                  margin-right: 0.5em;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -194,14 +239,24 @@ body{
     cursor: pointer;
     text-transform: uppercase;
     @extend %link;
-    &.toggled-on + div + .menu-all-pages-container .menu{
-      & > li{
-        display: block;
-        &:last-child{
-          border-bottom: none;
-        }
-        &.right li {
-          display: none;
+    &:before{
+      @extend %fa;
+      content: $fa-var-navicon;
+      margin-right: 0.5em;
+    }
+    &.toggled-on {
+      &:before{
+        content: $fa-var-close;
+      }
+      & + div + .menu-all-pages-container .menu {
+        & > li {
+          display: block;
+          &:last-child {
+            border-bottom: none;
+          }
+          &.right li {
+            display: none;
+          }
         }
       }
     }

@@ -27,6 +27,7 @@ function filePaths() {
     'port'           : 3000,
     'htmlDest'       : './dist/',
     'imagePath'      : './src/images/',
+    'fontPath'       : assetBase + '/fonts',
     'imageDest'      : assetBase + '/images',
     'htmlPath'       : './src/pug/',
     'scssPath'       : './src/scss/',
@@ -43,7 +44,8 @@ var nodeSassConf = {
     './src/scss'
   ].concat(
     require("bourbon").includePaths,
-    require("bourbon-neat").includePaths
+    require("bourbon-neat").includePaths,
+    './node_modules/font-awesome/scss'
   ),
   outputStyle   : 'compressed'
 };
@@ -79,6 +81,18 @@ gulp.task('image-min', function() {
     .pipe($.imagemin({ optimizationLevel: 3 }))
     .pipe(gulp.dest(paths.imageDest));
 });
+
+
+/*----------------------------------------------------------------------------*/
+/* Copy font Taks
+ /*----------------------------------------------------------------------------*/
+
+gulp.task('copyFont', function() {
+  var paths = filePaths();
+  return gulp.src( './node_modules/font-awesome/fonts/*' )
+    .pipe(gulp.dest(paths.fontPath));
+});
+
 
 /*----------------------------------------------------------------------------*/
  /* Jade Tasks
@@ -135,7 +149,7 @@ gulp.task('sass', function () {
 
 gulp.task('deploy', function() {
   deployFlg = true;
-  runSequence( 'pug', 'sass', 'image-min', function() {
+  runSequence( 'pug', 'sass', 'image-min', 'copyFont', function() {
     deployFlg = false;
     console.log( 'Deploy Done. Push them to origin/master!' );
   });
@@ -154,5 +168,6 @@ gulp.task('default', [
   'image-min',
   'pug',
   'sass',
+  'copyFont',
   'watch'
 ]);

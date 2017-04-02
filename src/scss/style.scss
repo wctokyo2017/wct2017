@@ -2,9 +2,12 @@
 
 @import "variables";
 
+// Libraries
 @import "bourbon";
 @import "neat";
+@import "font-awesome";
 
+// Mixin & globals
 @import "mixins";
 @import "global";
 
