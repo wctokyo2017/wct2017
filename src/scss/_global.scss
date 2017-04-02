@@ -4,6 +4,10 @@ html, body{
   margin: 0;
 }
 
+.hide{
+  display: none;
+}
+
 body{
   font-family: $body-base-font;
   font-weight: $body-base-weight;
