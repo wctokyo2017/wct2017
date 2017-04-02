@@ -1,0 +1,8 @@
+/**
+ * Wrapped with media query
+ */
+@mixin wct-small-screen( $size: $wordcamp-break-point ) {
+  @media only screen and ( max-width: $size ) {
+    @content;
+  }
+}

@@ -14,6 +14,9 @@ article.hentry {
   & + & {
     margin-top: 40px;
   }
+  @include wct-small-screen(){
+    padding: 30px 10px;
+  }
 }
 
 .entry{
@@ -23,10 +26,13 @@ article.hentry {
   &-title{
     font-size: 32px;
     font-weight: normal;
-    line-height: 1.1;
+    line-height: 1.4;
     margin: 0;
     padding: 0 10px 10px;
     border-bottom: 3px solid #fff;
+    @include wct-small-screen(){
+      font-size: 20px;
+    }
     a{
       @include white-link(false){
         display: block;
@@ -37,6 +43,7 @@ article.hentry {
     @extend %clearfix;
     font-size: 16px;
     line-height: 1.7;
+    overflow-x: hidden;
     & > *:first-child{
       margin-top: 0 !important;
     }
@@ -45,6 +52,9 @@ article.hentry {
       margin: 40px 0 30px;
       font-weight: $body-base-weight;
       line-height: 1.5;
+      @include wct-small-screen(){
+        margin: 30px 0 20px;
+      }
     }
     h1, h2{
       font-size: 25px;
@@ -52,16 +62,25 @@ article.hentry {
       border-left: 5px solid #fff;
       background: $wct-header-bg;
       line-height: 1.4;
+      @include wct-small-screen(){
+        font-size: 18px;
+      }
     }
     h3{
       line-height: 1.4;
       font-size: 20px;
       border-bottom: 1px solid #fff;
+      @include wct-small-screen(){
+        font-size: 16px;
+      }
     }
     h4{
       font-size: 18px;
       padding: 5px 10px;
       background: $wct-header-bg;
+      @include wct-small-screen(){
+        font-size: 16px;
+      }
     }
     h5{
       border-left: 3px solid #fff;
@@ -117,6 +136,9 @@ article.hentry {
     }
     ul, dl, ol{
       margin: 40px 0;
+      @include wct-small-screen(){
+        margin: 20px 0 30px;
+      }
     }
     dl{
       dt{
@@ -134,6 +156,9 @@ article.hentry {
       margin: 60px 0;
       border: none;
       border-top: 1px solid transparent;
+      @include wct-small-screen(){
+        margin: 40px 0;
+      }
     }
 
     // Inline elements
@@ -143,6 +168,8 @@ article.hentry {
 
     // Table
     table{
+      max-width: 100%;
+      overflow-x: scroll;
       margin: 40px 0;
       table-layout: auto;
       border-collapse: collapse;
@@ -184,4 +211,8 @@ article.hentry {
       margin: 40px 0;
     }
   }
+}
+
+#comments{
+  margin: 40px 0;
 }

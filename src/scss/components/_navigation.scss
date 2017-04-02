@@ -1,12 +1,16 @@
 body{
-  margin-top: $navigation-height;
+  padding-top: $navigation-height;
 }
 .siteheader{
   position: relative;
+
 }
 
 %header-bg{
   background: $navigation-base-bg;
+  @media only screen and ( min-width: $wordcamp-break-point ){
+    background-color: $navigation-base-bg-transparent;
+  }
   box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
 }
 
@@ -74,15 +78,25 @@ body{
       }
       // Second level
       & > .sub-menu{
-        background: $navigation-base-bg;
+        background: $navigation-submenu-bg;
         & > li{
           width: auto;
           position: relative;
+          border-bottom: 1px solid $navigation-submenu-border;
+          &:last-child{
+            border-bottom: none;
+          }
           & > a{
           }
           // 3rd level
           & > .sub-menu{
-            background: $navigation-base-bg;
+            background: $navigation-submenu-bg;
+            & > li{
+              border-bottom: 1px solid $navigation-submenu-border;
+              &:last-child{
+                border-bottom: none;
+              }
+            }
           }
         }
       }
@@ -94,6 +108,7 @@ body{
 }
 
 .main-navigation{
+  @extend %header-bg;
   .menu-all-pages-container{
     @extend .grid-container;
     height: $navigation-height;
@@ -103,6 +118,9 @@ body{
         height: $navigation-height;
         display: inline-block;
         float: left;
+        @include wct-small-screen(){
+          display: none;
+        }
         & > .sub-menu {
           display: none;
           position: absolute;
@@ -125,13 +143,20 @@ body{
             }
           }
         }
+        &.right > .sub-menu{
+          left: auto;
+          right: 0;
+          & > li{
+            // 3rd level
+            & > .sub-menu{
+              left: auto;
+              right: 100%;
+            }
+          }
+        }
       }
     }
   }
-  .menu{
-    @extend %header-bg;
-  }
-
 }
 
 .main-small-navigation{
@@ -145,9 +170,14 @@ body{
     @extend %header-bg;
     max-height: 400px;
     max-height: calc(100vh - #{$navigation-height});
-    overflow-y: scroll;;
+    overflow-y: scroll;
     & > .menu > li{
       display: none;
+      background-color: $navigation-secondary-bg;
+      border-bottom: 1px solid $navigation-submenu-border;
+      &:last-child{
+        border-bottom: none;
+      }
       &.right{
         display: inline-block;
         text-align: center;
@@ -162,10 +192,17 @@ body{
     width: 50%;
     text-align: center;
     cursor: pointer;
+    text-transform: uppercase;
     @extend %link;
     &.toggled-on + div + .menu-all-pages-container .menu{
       & > li{
         display: block;
+        &:last-child{
+          border-bottom: none;
+        }
+        &.right li {
+          display: none;
+        }
       }
     }
   }

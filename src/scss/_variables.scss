@@ -45,14 +45,23 @@ $img-path: "../images/";
 //
 $navigation-height: 50px;
 $navigation-base-bg: $wct-bg-color;
+$navigation-base-bg-transparent: rgba( 0, 0, 0, .5 );
+$navigation-base-bg-transparent-hover: rgba( 255, 255, 255, .1 );
 $navigation-secondary-bg: #0072A6;
 $navigation-link-pad: 20px;
+$navigation-submenu-link: #00599b;
+$navigation-submenu-bg: #000f25;
+$navigation-submenu-border: #85abde;
+
 
 //
 //------------------------
 // Grid setting
 //
 //
+
+$admin-bar-break-point: 782px;
+$wordcamp-break-point: 600px;
 
 $grid-xs: (
   columns: 12,
@@ -72,7 +81,6 @@ $grid-sm: (
   media: 640px,
 );
 
-$admin-bar-break-point: 768px;
 
 $grid-md: (
   columns: 12,
