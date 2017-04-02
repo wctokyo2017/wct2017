@@ -199,6 +199,13 @@ body{
         text-align: center;
         width: 50%;
         top: 0;
+        & > a{
+          &:before{
+            @extend %fa;
+            content: $fa-var-globe;
+            margin-right: 0.5em;
+          }
+        }
       }
       & > .sub-menu{
         & > li{

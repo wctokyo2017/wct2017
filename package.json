@@ -7,7 +7,7 @@
   "scripts": {
     "start": "gulp default",
     "gulp": "gulp",
-    "server": "gulp default --mode server",
+    "server": "gulp server --mode server",
     "production": "gulp deploy",
     "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"

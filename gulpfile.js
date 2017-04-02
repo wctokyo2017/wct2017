@@ -164,6 +164,8 @@ gulp.task('watch', function() {
   gulp.watch([paths.imageDest + '**/*'], ['image-min']);
 });
 
+gulp.task('server', ['browser-sync', 'watch']);
+
 gulp.task('default', [
   'image-min',
   'pug',
