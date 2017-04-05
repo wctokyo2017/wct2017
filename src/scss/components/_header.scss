@@ -34,16 +34,11 @@ body {
       background-size: 3258px;
     }
 
-    @include grid-media($grid-lg-s) {
-      background-position: 50% -75px;
-      background-size: 3902px;
-    }
-
     @include grid-media($grid-lg) {
       background-image: url(#{$img-path}header-top.jpg),
                         url(#{$img-path}header-top-bg.jpg);
-      background-position: 50% -102px, 0 0;
-      background-size: 4580px, 10px;
+      background-position: 50% -75px, 0 -75px;
+      background-size: 3902px, 10px;
     }
   }
 
@@ -125,12 +120,8 @@ body {
       height: 570px;
     }
 
-    @include grid-media($grid-lg-s) {
-      height: 645px;
-    }
-
     @include grid-media($grid-lg) {
-      height: 745px;
+      height: 645px;
     }
 
     // 衛星
@@ -328,16 +319,10 @@ body {
       height: 505px;
     }
 
-    @include grid-media($grid-lg-s) {
+    @include grid-media($grid-lg) {
       background-position: 50% 80px, 50% 293px, 50% 343px, 50% 388px;
       background-size: 670px, 110px, 365px, 430px;
       height: 570px;
-    }
-
-    @include grid-media($grid-lg) {
-      background-position: 50% 90px, 50% 335px, 50% 395px, 50% 450px;
-      background-size: 778px, 129px, 428px, 505px;
-      height: 670px;
     }
   }
 
