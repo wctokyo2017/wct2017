@@ -1,7 +1,7 @@
 body{
   padding-top: $navigation-height-sm;
 
-  @include grid-media($grid-sm) {
+  @media only screen and ( min-width: $wordcamp-break-point ){
     padding-top: $navigation-height;
   }
 }
@@ -29,7 +29,7 @@ body{
   padding-left: $navigation-link-pad;
   padding-right: $navigation-link-pad;
 
-  @include grid-media($grid-sm) {
+  @media only screen and ( min-width: $wordcamp-break-point ){
     height: $navigation-height;
     line-height: $navigation-height;
   }
@@ -59,7 +59,7 @@ body{
   width: 100%;
   height: $navigation-height-sm;
 
-  @include grid-media($grid-sm) {
+  @media only screen and ( min-width: $wordcamp-break-point ){
     height: $navigation-height;
   }
 
@@ -127,7 +127,7 @@ body{
     @extend .grid-container;
     height: $navigation-height-sm;
 
-    @include grid-media($grid-sm) {
+    @media only screen and ( min-width: $wordcamp-break-point ){
       height: $navigation-height;
     }
 
@@ -138,7 +138,7 @@ body{
         display: inline-block;
         float: left;
 
-        @include grid-media($grid-sm) {
+        @media only screen and ( min-width: $wordcamp-break-point ){
           height: $navigation-height;
         }
 
@@ -164,7 +164,7 @@ body{
           top: $navigation-height-sm;
           width: auto;
 
-          @include grid-media($grid-sm) {
+          @media only screen and ( min-width: $wordcamp-break-point ){
             top: $navigation-height;
           }
 
@@ -213,7 +213,7 @@ body{
     max-height: calc(100vh - #{$navigation-height-sm});
     overflow-y: scroll;
 
-    @include grid-media($grid-sm) {
+    @media only screen and ( min-width: $wordcamp-break-point ){
       top: -1 * $navigation-height;
       padding-top: $navigation-height;
       max-height: calc(100vh - #{$navigation-height});

@@ -47,49 +47,44 @@ body {
    */
   &.single, &.page {
     background-image: url(#{$img-path}header-sub-s.jpg);
-    background-position: calc(50% + 90px) 0;
+    background-position: calc(50% + 100px) 0;
     background-size: 810px;
 
     @include grid-media($grid-xs) {
       background-image: url(#{$img-path}header-sub.jpg);
-      background-position: calc(50% + 100px) -10px;
+      background-position: calc(50% + 110px) -5px;
       background-size: 963px;
     }
 
     @include grid-media($grid-sm-s) {
-      background-position: calc(50% + 120px) -20px;
+      background-position: calc(50% + 130px) -30px;
       background-size: 1468px;
     }
 
     @include grid-media($grid-sm) {
-      background-position: calc(50% + 150px) -55px;
+      background-position: calc(50% + 160px) -55px;
       background-size: 1878px;
     }
 
     @include grid-media($grid-md) {
-      background-position: calc(50% + 185px) -80px;
+      background-position: calc(50% + 190px) -90px;
       background-size: 2255px;
     }
 
-    @include grid-media($grid-lg-s) {
-      background-position: calc(50% + 220px) -95px;
-      background-size: 2300px;
+	@include grid-media($grid-lg-s) {
+      background-image: url(#{$img-path}header-sub.jpg),
+                        url(#{$img-path}header-sub-bg.jpg);
+      background-position: calc(50% + 220px) -95px, 0 -95px;
+      background-size: 2300px, 5px;
     }
 
     @include grid-media($grid-lg) {
       background-image: url(#{$img-path}header-sub.jpg),
                         url(#{$img-path}header-sub-bg.jpg);
-      background-position: calc(50% + 235px) -135px, 0 -135px;
-      background-size: 2700px, 10px;
+      background-position: calc(50% + 240px) -95px, 0 -95px;
+      background-size: 2300px, 5px;
     }
   }
-}
-
-.menu {
-  display: none;
-}
-.menu-toggle {
-  display: none;
 }
 
 .site-header {
@@ -102,26 +97,26 @@ body {
    * Home
    */
   .home & {
-    height: 275px;
+    height: 235px;
 
     @include grid-media($grid-xs) {
-      height: 350px;
+      height: 300px;
     }
 
     @include grid-media($grid-sm-s) {
-      height: 440px;
+      height: 390px;
     }
 
     @include grid-media($grid-sm) {
-      height: 495px;
+      height: 445px;
     }
 
     @include grid-media($grid-md) {
-      height: 570px;
+      height: 520px;
     }
 
     @include grid-media($grid-lg) {
-      height: 645px;
+      height: 595px;
     }
 
     // 衛星
@@ -235,30 +230,26 @@ body {
    * Single page, Page
    */
   .single &, .page & {
-    height: 195px;
+    height: 145px;
 
     @include grid-media($grid-xs) {
-      height: 225px;
+      height: 175px;
     }
 
     @include grid-media($grid-sm-s) {
-      height: 310px;
+      height: 270px;
     }
 
     @include grid-media($grid-sm) {
-      height: 380px;
+      height: 320px;
     }
 
     @include grid-media($grid-md) {
-      height: 420px;
-    }
-
-    @include grid-media($grid-lg-s) {
-      height: 430px;
+      height: 375px;
     }
 
     @include grid-media($grid-lg) {
-      height: 460px;
+      height: 380px;
     }
   }
 }
@@ -290,7 +281,7 @@ body {
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-sub-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
-    background-position: 50% 23px, 50% 100px, 50% 123px, 50% 163px;
+    background-position: 50% 23px, 50% 105px, 50% 128px, 50% 165px;
     background-size: 258px, 56px, 188px, 235px;
     height: 220px;
     top: 0;
@@ -334,60 +325,57 @@ body {
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-sub-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
-    $grid-posX: calc(50% - 58px);
-    background-position: $grid-posX 5px, $grid-posX 60px, $grid-posX 77px, $grid-posX 65px;
-    background-size: 180px, 40px, 145px, 190px;
+    $grid-posY: 10px;
+    $grid-posX: calc(50% - 60px);
+    background-position: $grid-posX $grid-posY, $grid-posX $grid-posY + 60px, $grid-posX $grid-posY + 80px, $grid-posX $grid-posY + 100px;
+    background-size: 200px, 50px, 160px, 195px;
     height: 155px;
     top: 0;
 
     @include grid-media($grid-xs) {
-      $grid-xs-posX: calc(50% - 70px);
-      background-position: $grid-xs-posX 5px, $grid-xs-posX 70px, $grid-xs-posX 90px, $grid-xs-posX 80px;
+      $grid-xs-posY: 20px;
+      $grid-xs-posX: calc(50% - 75px);
+      background-position: $grid-xs-posX $grid-xs-posY, $grid-xs-posX $grid-xs-posY + 65px, $grid-xs-posX $grid-xs-posY + 85px, $grid-xs-posX $grid-xs-posY + 115px;
       background-size: 210px, 50px, 175px, 215px;
       height: 185px;
     }
 
     @include grid-media($grid-sm-s) {
-      $grid-sm-s-posX: calc(50% - 105px);
-      background-position: $grid-sm-s-posX 35px, $grid-sm-s-posX 110px, $grid-sm-s-posX 135px, $grid-sm-s-posX 150px;
-      background-size: 245px, 57px, 205px, 260px;
+      $grid-sm-s-posY: 40px;
+      $grid-sm-s-posX: calc(50% - 130px);
+      background-position: $grid-sm-s-posX $grid-sm-s-posY, $grid-sm-s-posX $grid-sm-s-posY + 85px, $grid-sm-s-posX $grid-sm-s-posY + 110px, $grid-sm-s-posX $grid-sm-s-posY + 175px;
+      background-size: 265px, 60px, 210px, 265px;
       height: 270px;
     }
 
     @include grid-media($grid-sm) {
+      $grid-sm-posY: 40px;
       $grid-sm-posX: calc(50% - 130px);
-      background-position: $grid-sm-posX 35px, $grid-sm-posX 133px, $grid-sm-posX 165px, $grid-sm-posX 185px;
+      background-position: $grid-sm-posX $grid-sm-posY, $grid-sm-posX $grid-sm-posY + 100px, $grid-sm-posX $grid-sm-posY + 130px, $grid-sm-posX $grid-sm-posY + 200px;
       background-size: 318px, 73px, 265px, 325px;
       height: 330px;
     }
 
     @include grid-media($grid-md) {
-      $grid-md-posX: calc(50% - 150px);
-      background-position: $grid-md-posX 40px, $grid-md-posX 160px, $grid-md-posX 198px, $grid-md-posX 220px;
+      $grid-md-posY: 45px;
+      $grid-md-posX: calc(50% - 185px);
+      background-position: $grid-md-posX $grid-md-posY, $grid-md-posX $grid-md-posY + 118px, $grid-md-posX $grid-md-posY + 158px, $grid-md-posX $grid-md-posY + 240px;
       background-size: 378px, 88px, 314px, 385px;
       height: 370px;
     }
 
+    $grid-lg-title-posY: 45px;
+
     @include grid-media($grid-lg-s) {
       $grid-lg-s-posX: calc(50% - 190px);
-      background-position: $grid-lg-s-posX 30px, $grid-lg-s-posX 150px, $grid-lg-s-posX 190px, $grid-lg-s-posX 205px;
-      background-size: 386px, 89px, 318px, 395px;
+      background-position: $grid-lg-s-posX $grid-lg-title-posY, $grid-lg-s-posX $grid-lg-title-posY + 120px, $grid-lg-s-posX $grid-lg-title-posY + 160px, $grid-lg-s-posX $grid-lg-title-posY + 240px;
+      background-size: 386px, 89px, 318px, 400px;
       height: 380px;
     }
 
     @include grid-media($grid-lg) {
       $grid-lg-posX: calc(50% - 240px);
-      background-position: $grid-lg-posX 45px, $grid-lg-posX 165px, $grid-lg-posX 205px, $grid-lg-posX 230px;
-      background-size: 386px, 89px, 318px, 395px;
-      height: 410px;
+      background-position: $grid-lg-posX $grid-lg-title-posY, $grid-lg-posX $grid-lg-title-posY + 120px, $grid-lg-posX $grid-lg-title-posY + 160px, $grid-lg-posX $grid-lg-title-posY + 240px;
     }
   }
-}
-
-.menu-toggle {
-  margin: 0;
-}
-
-.menu > ul {
-  margin: 0;
 }

@@ -81,7 +81,7 @@ $grid-sm-s: (
 $grid-sm: (
   columns: 12,
   gutter: 20px,
-  media: 640px,
+  media: $wordcamp-break-point,
 );
 
 
