@@ -10,7 +10,7 @@ body {
    */
   &.home {
     background-image: url(#{$img-path}header-top-s.jpg);
-    background-position: 50% $navigation-height;
+    background-position: 50% 0;
     background-size: 1358px;
 
     @include grid-media($grid-xs) {
@@ -37,8 +37,8 @@ body {
     @include grid-media($grid-lg) {
       background-image: url(#{$img-path}header-top.jpg),
                         url(#{$img-path}header-top-bg.jpg);
-      background-position: 50% -75px, 0 -75px;
-      background-size: 3902px, 10px;
+      background-position: 50% -75px, 0 -25px;
+      background-size: 3902px 920px, 10px 920px;
     }
   }
 
@@ -290,38 +290,38 @@ body {
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-sub-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
-    background-position: 50% 23px, 50% 100px, 50% 123px, 50% 113px;
+    background-position: 50% 23px, 50% 100px, 50% 123px, 50% 163px;
     background-size: 258px, 56px, 188px, 235px;
     height: 220px;
     top: 0;
 
     @include grid-media($grid-xs) {
-      background-position: 50% 40px, 50% 140px, 50% 168px, 50% 180px;
+      background-position: 50% 40px, 50% 140px, 50% 165px, 50% 225px;
       background-size: 335px, 56px, 185px, 255px;
       height: 295px;
     }
 
     @include grid-media($grid-sm-s) {
-      background-position: 50% 55px, 50% 185px, 50% 220px, 50% 235px;
-      background-size: 420px, 71px, 235px, 325px;
+      background-position: 50% 55px, 50% 185px, 50% 218px, 50% 292px;
+      background-size: 420px, 72px, 235px, 325px;
       height: 380px;
     }
 
     @include grid-media($grid-sm) {
-      background-position: 50% 70px, 50% 215px, 50% 253px, 50% 273px;
-      background-size: 486px, 81px, 268px, 365px;
+      background-position: 50% 70px, 50% 215px, 50% 253px, 50% 340px;
+      background-size: 486px, 82px, 270px, 365px;
       height: 435px;
     }
 
     @include grid-media($grid-md) {
-      background-position: 50% 75px, 50% 253px, 50% 300px, 50% 325px;
-      background-size: 582px, 98px, 323px, 440px;
+      background-position: 50% 75px, 50% 255px, 50% 300px, 50% 400px;
+      background-size: 580px, 100px, 325px, 440px;
       height: 505px;
     }
 
     @include grid-media($grid-lg) {
-      background-position: 50% 80px, 50% 293px, 50% 343px, 50% 388px;
-      background-size: 670px, 110px, 365px, 430px;
+      background-position: 50% 80px, 50% 295px, 50% 345px, 50% 465px;
+      background-size: 670px, 110px, 365px, 445px;
       height: 570px;
     }
   }
