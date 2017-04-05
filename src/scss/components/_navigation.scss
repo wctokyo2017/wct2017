@@ -1,9 +1,12 @@
 body{
-  padding-top: $navigation-height;
+  padding-top: $navigation-height-sm;
+
+  @include grid-media($grid-sm) {
+    padding-top: $navigation-height;
+  }
 }
 .siteheader{
   position: relative;
-
 }
 
 %header-bg{
@@ -21,10 +24,16 @@ body{
   color: #fff;
   box-sizing: border-box;
   display: block;
-  height: $navigation-height;
-  line-height: $navigation-height;
+  height: $navigation-height-sm;
+  line-height: $navigation-height-sm;
   padding-left: $navigation-link-pad;
   padding-right: $navigation-link-pad;
+
+  @include grid-media($grid-sm) {
+    height: $navigation-height;
+    line-height: $navigation-height;
+  }
+
   &:link, &:visited{
     color: #fff;
     text-decoration: none;
@@ -48,7 +57,12 @@ body{
     }
   }
   width: 100%;
-  height: $navigation-height;
+  height: $navigation-height-sm;
+
+  @include grid-media($grid-sm) {
+    height: $navigation-height;
+  }
+
   ul{
     padding: 0;
     margin: 0;
@@ -111,13 +125,23 @@ body{
   @extend %header-bg;
   .menu-all-pages-container{
     @extend .grid-container;
-    height: $navigation-height;
+    height: $navigation-height-sm;
+
+    @include grid-media($grid-sm) {
+      height: $navigation-height;
+    }
+
     & > .menu{
       display: block;
       & > li{
-        height: $navigation-height;
+        height: $navigation-height-sm;
         display: inline-block;
         float: left;
+
+        @include grid-media($grid-sm) {
+          height: $navigation-height;
+        }
+
         @include wct-small-screen(){
           display: none;
         }
@@ -137,8 +161,13 @@ body{
           display: none;
           position: absolute;
           left: 0;
-          top: $navigation-height;
+          top: $navigation-height-sm;
           width: auto;
+
+          @include grid-media($grid-sm) {
+            top: $navigation-height;
+          }
+
           & > li {
             width: auto;
             white-space: nowrap;
@@ -177,12 +206,19 @@ body{
   .menu-all-pages-container{
     z-index: 10;
     position: relative;
-    top: -1 * $navigation-height;
-    padding-top: $navigation-height;
+    top: -1 * $navigation-height-sm;
+    padding-top: $navigation-height-sm;
     @extend %header-bg;
     max-height: 400px;
-    max-height: calc(100vh - #{$navigation-height});
+    max-height: calc(100vh - #{$navigation-height-sm});
     overflow-y: scroll;
+
+    @include grid-media($grid-sm) {
+      top: -1 * $navigation-height;
+      padding-top: $navigation-height;
+      max-height: calc(100vh - #{$navigation-height});
+    }
+
     & > .menu > li{
       display: none;
       background-color: $navigation-submenu-bg;

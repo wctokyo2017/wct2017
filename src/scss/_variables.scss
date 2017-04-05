@@ -45,6 +45,8 @@ $img-path: "../images/";
 //
 //
 $navigation-height: 50px;
+$navigation-height-sm: $navigation-height - 10;
+
 $navigation-base-bg: $wct-bg-color;
 $navigation-base-bg-transparent: rgba( 0, 0, 0, .5 );
 $navigation-base-bg-transparent-hover: rgba( 255, 255, 255, .1 );
