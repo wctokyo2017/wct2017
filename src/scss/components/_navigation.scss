@@ -19,12 +19,13 @@ body{
 
 %link{
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   color: #fff;
   box-sizing: border-box;
   display: block;
   height: $navigation-height-sm;
+  letter-spacing: 1px;
   line-height: $navigation-height-sm;
   padding-left: $navigation-link-pad;
   padding-right: $navigation-link-pad;
@@ -33,7 +34,6 @@ body{
     height: $navigation-height;
     line-height: $navigation-height;
   }
-
   &:link, &:visited{
     color: #fff;
     text-decoration: none;
@@ -41,7 +41,6 @@ body{
   &:hover, &:active{
     color: #fff;
     text-decoration: none;
-    background-color: rgba( 255, 255, 255, .4 );
   }
 }
 
@@ -71,34 +70,58 @@ body{
       list-style: none;
     }
   }
+
   a{
     @extend %link;
   }
+
   .menu-all-pages-container{
     position: relative;
     padding: 0;
     .menu{
     }
+
     // First label
     & > .menu > li{
       position: relative;
+
+      &:hover, &:active{
+        background-color: $navigation-base-bg-transparent-hover;
+      }
+
       &.right{
         position: absolute;
         right: 0;
         top: 0;
         background: $navigation-secondary-bg;
+
+        &:hover, &:active{
+          background-color: $navigation-secondary-bg-hover;
+        }
       }
+
       & > a{
       }
+
       // Second level
       & > .sub-menu{
         background: $navigation-submenu-bg;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
         & > li{
           width: auto;
           position: relative;
+          border-top: 1px solid $navigation-submenu-border-top;
           border-bottom: 1px solid $navigation-submenu-border;
+          &:hover, &:active{
+            background-color: $navigation-submenu-bg-hover;
+          }
+          &:first-child{
+            border-top: none;
+          }
           &:last-child{
             border-bottom: none;
+            border-radius: 0 0 5px 5px;
           }
           & > a{
           }
@@ -106,7 +129,11 @@ body{
           & > .sub-menu{
             background: $navigation-submenu-bg;
             & > li{
+              border-top: 1px solid $navigation-submenu-border-top;
               border-bottom: 1px solid $navigation-submenu-border;
+              &:first-child{
+                border-top: none
+              }
               &:last-child{
                 border-bottom: none;
               }
@@ -145,15 +172,26 @@ body{
         @include wct-small-screen(){
           display: none;
         }
+
         // icon
         &.menu-item-has-children > a{
+          padding-top: 1px;
           &:after{
             @extend %fa;
+            border-radius: 50%;
+            content: $fa-var-play;
+            font-size: 8px;
+            transform: rotateZ( 90deg );
+            height: 8px;
+            line-height: 8px;
+            width: 8px;
             margin-left: 0.5em;
-            content: $fa-var-caret-down;
+            padding: 0;
+            transition: .6s;
+            vertical-align: middle;
           }
           &:hover:after{
-            content: $fa-var-caret-up;
+            transform: rotateZ( 270deg );
           }
         }
         // 2nd level
@@ -275,6 +313,7 @@ body{
     }
   }
   .menu-toggle{
+    border: solid 1px red;
     position: relative;
     z-index: 11;
     width: 50%;

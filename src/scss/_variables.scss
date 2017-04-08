@@ -17,7 +17,6 @@ $wct-btn-disabled-bg: #ccc;
 // Footer
 $wct-footer-bg: #000C24;
 
-
 //
 //------------------------
 // Font setting
@@ -29,6 +28,7 @@ $body-base-font:  helvetica, arial, 'Hiragino Kaku Gothic ProN', meiryo, 'ms pgo
 $body-base-weight: 300;
 $wct-monospace: Consolas, 'Courier New', Courier, Monaco, monospace;
 $fa-font-size-base: 1em;
+
 
 //
 //------------------------
@@ -48,12 +48,19 @@ $navigation-height: 50px;
 $navigation-height-sm: $navigation-height - 10;
 
 $navigation-base-bg: $wct-bg-color;
+
 $navigation-base-bg-transparent: rgba( 0, 0, 0, .5 );
 $navigation-base-bg-transparent-hover: rgba( 255, 255, 255, .1 );
-$navigation-secondary-bg: #0072A6;
+
+$navigation-secondary-bg: #0271a7;
+$navigation-secondary-bg-hover: #0392c1;
+
 $navigation-link-pad: 20px;
-$navigation-submenu-link: #00599b;
+
 $navigation-submenu-bg: #000f25;
+$navigation-submenu-bg-hover: #163b65;
+
+$navigation-submenu-border-top: #000;
 $navigation-submenu-border: #85abde;
 
 
