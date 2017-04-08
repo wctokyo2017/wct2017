@@ -5,7 +5,7 @@
 //
 
 // Main
-$wct-bg-color: #002C5C;
+$wct-bg-color: #022e5f;
 $wct-header-bg: transparentize( #3094e9, 0.82);
 $wct-table-header-bg: #012c5d;
 
@@ -47,7 +47,7 @@ $img-path: "../images/";
 $navigation-height: 50px;
 $navigation-height-sm: $navigation-height - 10;
 
-$navigation-base-bg: $wct-bg-color;
+$navigation-base-bg: #0B3359;
 
 $navigation-base-bg-transparent: rgba( 0, 0, 0, .5 );
 $navigation-base-bg-transparent-hover: rgba( 255, 255, 255, .1 );
@@ -90,7 +90,6 @@ $grid-sm: (
   gutter: 20px,
   media: $wordcamp-break-point,
 );
-
 
 $grid-md: (
   columns: 12,

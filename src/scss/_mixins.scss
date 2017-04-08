@@ -6,3 +6,16 @@
     @content;
   }
 }
+
+/**
+ * aicon rotation
+ */
+@mixin aicon-rot($size: 16px) {
+  border-radius: 50%;
+  font-size: $size;
+  transition: .6s;
+  padding: 0;
+  height: $size;
+  line-height: $size;
+  width: $size;
+}
