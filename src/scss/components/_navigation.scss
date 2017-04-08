@@ -11,9 +11,6 @@ body{
 
 %header-bg{
   background: $navigation-base-bg;
-  @media only screen and ( min-width: $wordcamp-break-point ){
-    background-color: $navigation-base-bg-transparent;
-  }
   box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
 }
 
@@ -46,6 +43,7 @@ body{
 
 .main-navigation,
 .main-small-navigation{
+  background: $navigation-base-bg;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -91,11 +89,6 @@ body{
         position: absolute;
         right: 0;
         top: 0;
-        background: $navigation-secondary-bg;
-
-        &:hover, &:active{
-          background-color: $navigation-secondary-bg-hover;
-        }
       }
 
       & > a{
@@ -231,14 +224,12 @@ body{
 }
 
 .main-small-navigation{
-  background: $navigation-base-bg;
   @extend %header-bg;
   .menu-all-pages-container{
     z-index: 10;
     position: relative;
     top: -1 * $navigation-height-sm;
     padding-top: $navigation-height-sm;
-    @extend %header-bg;
     max-height: 400px;
     max-height: calc(100vh - #{$navigation-height-sm});
     overflow-y: scroll;
@@ -253,6 +244,9 @@ body{
       display: none;
       background-color: $navigation-submenu-bg;
       border-bottom: 1px solid $navigation-submenu-border;
+      &:hover, &:active{
+        background-color: $navigation-submenu-bg-hover;
+      }
       &:first-child{
         border-top: 1px solid $navigation-submenu-border;
       }
@@ -278,13 +272,6 @@ body{
           &:first-child{
             border-top: 1px solid $navigation-submenu-border;
           }
-          & > a{
-            &:before{
-              @extend %fa;
-              content: $fa-var-caret-right;
-              margin-right: 0.5em;
-            }
-          }
           & > .sub-menu{
             & > li{
               &:first-child{
@@ -304,8 +291,20 @@ body{
       }
     }
   }
+  .sub-menu {
+    a {
+      &:before {
+        @extend %fa;
+        content: $fa-var-play;
+        font-size: 7px;
+        line-height: 8px;
+        height: 8px;
+        margin-right: 1em;
+        vertical-align: middle;
+      }
+    }
+  }
   .menu-toggle{
-    border: solid 1px red;
     position: relative;
     z-index: 11;
     width: 50%;
@@ -337,6 +336,17 @@ body{
   }
   .menu{
     display: block !important;
+  }
+}
+
+.menu {
+  .right {
+    & > a {
+      background: $navigation-secondary-bg;
+      &:hover, &:active {
+        background-color: $navigation-secondary-bg-hover;
+      }
+    }
   }
 }
 
