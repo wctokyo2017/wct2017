@@ -41,6 +41,12 @@ body{
   }
 }
 
+%sp-menu {
+  max-height: 400px;
+  max-height: calc(100vh - #{$navigation-height-sm});
+}
+
+.menu-en-pages-container,
 .main-navigation,
 .main-small-navigation{
   background: $navigation-base-bg;
@@ -91,47 +97,6 @@ body{
         top: 0;
       }
 
-      & > a{
-      }
-
-      // Second level
-      & > .sub-menu{
-        background: $navigation-submenu-bg;
-        border-radius: 0 0 5px 5px;
-        box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
-        & > li{
-          width: auto;
-          position: relative;
-          border-top: 1px solid $navigation-submenu-border-top;
-          border-bottom: 1px solid $navigation-submenu-border;
-          &:hover, &:active{
-            background-color: $navigation-submenu-bg-hover;
-          }
-          &:first-child{
-            border-top: none;
-          }
-          &:last-child{
-            border-bottom: none;
-            border-radius: 0 0 5px 5px;
-          }
-          & > a{
-          }
-          // 3rd level
-          & > .sub-menu{
-            background: $navigation-submenu-bg;
-            & > li{
-              border-top: 1px solid $navigation-submenu-border-top;
-              border-bottom: 1px solid $navigation-submenu-border;
-              &:first-child{
-                border-top: none
-              }
-              &:last-child{
-                border-bottom: none;
-              }
-            }
-          }
-        }
-      }
       &:hover > .sub-menu{
         display: block;
       }
@@ -226,12 +191,11 @@ body{
 .main-small-navigation{
   @extend %header-bg;
   .menu-all-pages-container{
+		@extend %sp-menu;
     z-index: 10;
     position: relative;
     top: -1 * $navigation-height-sm;
     padding-top: $navigation-height-sm;
-    max-height: 400px;
-    max-height: calc(100vh - #{$navigation-height-sm});
     overflow-y: scroll;
 
     @media only screen and ( min-width: $wordcamp-break-point ){
@@ -242,55 +206,19 @@ body{
 
     & > .menu > li{
       display: none;
-      background-color: $navigation-submenu-bg;
-      border-bottom: 1px solid $navigation-submenu-border;
-      &:hover, &:active{
-        background-color: $navigation-submenu-bg-hover;
-      }
-      &:first-child{
-        border-top: 1px solid $navigation-submenu-border;
-      }
-      &:last-child{
-        border-bottom: none;
-      }
+      @include sub-menu;
+
       &.right{
-        background-color: $navigation-secondary-bg;
-        display: inline-block;
-        text-align: center;
-        width: 50%;
-        top: 0;
-        & > a{
-          &:before{
-            @extend %fa;
-            content: $fa-var-globe;
-            margin-right: 0.5em;
-          }
-        }
-      }
-      & > .sub-menu{
-        & > li{
-          &:first-child{
-            border-top: 1px solid $navigation-submenu-border;
-          }
-          & > .sub-menu{
-            & > li{
-              &:first-child{
-                border-top: 1px solid $navigation-submenu-border;
-              }
-              & > a{
-                &:before{
-                  @extend %fa;
-                  content: $fa-var-caret-right;
-                  color: transparent;
-                  margin-right: 0.5em;
-                }
-              }
-            }
-          }
+        display: none;
+        @media only screen and ( min-width: $wordcamp-break-point ){
+          display: inline-block;
+          width: 50%;
+          top: 0;
         }
       }
     }
   }
+
   .sub-menu {
     a {
       &:before {
@@ -304,6 +232,7 @@ body{
       }
     }
   }
+
   .menu-toggle{
     position: relative;
     z-index: 11;
@@ -312,6 +241,7 @@ body{
     cursor: pointer;
     text-transform: uppercase;
     @extend %link;
+
     &:before{
       @extend %fa;
       content: $fa-var-navicon;
@@ -324,10 +254,7 @@ body{
       & + div + .menu-all-pages-container .menu {
         & > li {
           display: block;
-          &:last-child {
-            border-bottom: none;
-          }
-          &.right li {
+          &.right {
             display: none;
           }
         }
@@ -339,14 +266,77 @@ body{
   }
 }
 
+.sub-menu {
+  box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
+
+  @media only screen and ( min-width: $wordcamp-break-point ) {
+    border-radius: 0 0 5px 5px;
+  }
+
+  li {
+    @include sub-menu;
+
+    @media only screen and ( min-width: $wordcamp-break-point ) {
+      &:first-child {
+        border-top: none;
+      }
+
+      &:last-child {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}
+
 .menu {
   .right {
     & > a {
       background: $navigation-secondary-bg;
+      text-align: center;
       &:hover, &:active {
         background-color: $navigation-secondary-bg-hover;
       }
+
+      &:before {
+        @extend %fa;
+        @include aicon-rot(16px);
+        content: $fa-var-globe;
+        margin-right: 0.5em;
+      }
+
+      @media only screen and ( min-width: $wordcamp-break-point ) {
+        &:before {
+          display: none;
+        }
+      }
     }
+  }
+}
+
+.menu-en-pages-container {
+  @extend %sp-menu;
+  right: 0;
+  top: 0;
+  width: 50%;
+
+  @media only screen and ( min-width: $wordcamp-break-point ) {
+    display: none;
+  }
+
+  & > ul {
+   ul:not(:target) {
+      border: solid 1px red;
+      //display: none;
+   }
+
+   ul:target {
+     border: solid 1px blue;
+      //display: block;
+   }
+
+   &:last-child {
+    border-bottom: 1px solid $navigation-submenu-border;
+   }
   }
 }
 

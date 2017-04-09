@@ -19,3 +19,26 @@
   line-height: $size;
   width: $size;
 }
+
+/**
+ * sub menu
+ */
+@mixin sub-menu() {
+  background: $navigation-submenu-bg;
+  border-top: 1px solid $navigation-submenu-border-top;
+  border-bottom: 1px solid $navigation-submenu-border;
+  position: relative;
+  width: auto;
+
+  &:hover, &:active{
+    background-color: $navigation-submenu-bg-hover;
+  }
+
+  &:first-child{
+    border-top: 1px solid $navigation-submenu-border;
+  }
+
+  &:last-child{
+    border-bottom: none;
+  }
+}
