@@ -133,6 +133,7 @@ body {
       width: ($satellite-width-pc / 3.4);
       height: ($satellite-height-pc / 3.4);
       left: ($satellite-width-pc * -1);
+      top: ($satellite-width-pc * -2);
 
       @keyframes  satellite {
         0% {
@@ -141,7 +142,7 @@ body {
         }
         50%,
         100% {
-          top: ($satellite-width-pc * -1);
+          top: ($satellite-width-pc * -2);
           left: 38%;
         }
       }
@@ -318,6 +319,83 @@ body {
     @include grid-media($grid-lg) {
       $grid-lg-posX: calc(50% - 240px);
       background-position: $grid-lg-posX $grid-lg-title-posY, $grid-lg-posX $grid-lg-title-posY + 120px, $grid-lg-posX $grid-lg-title-posY + 160px, $grid-lg-posX $grid-lg-title-posY + 240px;
+    }
+  }
+}
+
+.header-star {
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 241, 202, 0.8);
+    border-radius: 2px;
+    opacity: 0;
+    box-shadow: 0 0 5px rgba(255, 241, 202, 0.8),
+                0 0 8px rgba(255, 241, 202, 0.8),
+                0 0 15px rgba(255, 241, 202, 0.9);
+  }
+
+  &:nth-child(1) {
+    &::before {
+      top: 40%;
+      left: 5%;
+      animation: header_star 3s linear 2s infinite;
+    }
+    &::after {
+      top: 35%;
+      left: 10%;
+      animation: header_star 6s linear 1s infinite;
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      top: 15%;
+      left: 30%;
+      animation: header_star 4s linear 2s infinite;
+    }
+    &::after {
+      top: 20%;
+      left: 35%;
+      animation: header_star 5s linear 1s infinite;
+    }
+  }
+
+  &:nth-child(3) {
+    &::before {
+      top: 15%;
+      right: 30%;
+      animation: header_star 6s linear 2s infinite;
+    }
+    &::after {
+      top: 16%;
+      right: 35%;
+      animation: header_star 4s linear 1s infinite;
+    }
+  }
+
+  &:nth-child(4) {
+    &::before {
+      top: 52%;
+      right: 10%;
+      animation: header_star 4s linear 2s infinite;
+    }
+    &::after {
+      top: 50%;
+      right: 5%;
+      animation: header_star 5s linear 1s infinite;
+    }
+  }
+
+  @keyframes header_star {
+    0%, 50% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
     }
   }
 }
