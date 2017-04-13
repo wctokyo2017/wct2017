@@ -133,7 +133,7 @@ body {
       width: ($satellite-width-pc / 3.4);
       height: ($satellite-height-pc / 3.4);
       left: ($satellite-width-pc * -1);
-      top: ($satellite-width-pc * -2);
+      top: ($satellite-height-pc * -2);
 
       @keyframes  satellite {
         0% {
@@ -142,7 +142,7 @@ body {
         }
         50%,
         100% {
-          top: ($satellite-width-pc * -2);
+          top: ($satellite-height-pc * -2);
           left: 38%;
         }
       }
