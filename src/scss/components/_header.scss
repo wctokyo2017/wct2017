@@ -132,96 +132,38 @@ body {
       background-size: contain;
       width: ($satellite-width-pc / 3.4);
       height: ($satellite-height-pc / 3.4);
-      top: 110px;
       left: ($satellite-width-pc * -1);
 
       @keyframes  satellite {
         0% {
-          top: 110px;
-          left: ($satellite-width-pc / 3.4 * -2);
+          top: 20vw;
+          left: ($satellite-width-pc * -1);
         }
         50%,
         100% {
-          top: ($satellite-height-pc / 3.4 * -3);
-          left: 160px;
+          top: ($satellite-width-pc * -1);
+          left: 38%;
         }
       }
 
       @include grid-media($grid-sm-s) {
         width: ($satellite-width-pc / 2.8);
         height: ($satellite-height-pc / 2.8);
-        top: 170px;
-        left: ($satellite-width-pc * -1);
-
-        @keyframes  satellite {
-          0% {
-            top: 170px;
-            left: ($satellite-width-pc / 2.8 * -2);
-          }
-          50%,
-          100% {
-            top: ($satellite-height-pc / 2.8 * -3);
-            left: 250px;
-          }
-        }
       }
 
       @include grid-media($grid-sm) {
         width: ($satellite-width-pc / 2.3);
         height: ($satellite-height-pc / 2.3);
-        top: 230px;
-        left: ($satellite-width-pc * -1);
-
-        @keyframes  satellite {
-          0% {
-            top: 230px;
-            left: ($satellite-width-pc / 2.3 * -2);
-          }
-          50%,
-          100% {
-            top: ($satellite-height-pc / 2.3 * -3);
-            left: 340px;
-          }
-        }
       }
 
       @include grid-media($grid-md) {
         width: ($satellite-width-pc / 1.9);
         height: ($satellite-height-pc / 1.9);
-        top: 245px;
-        left: ($satellite-width-pc * -1);
-
-        @keyframes  satellite {
-          0% {
-            top: 245px;
-            left: ($satellite-width-pc / 1.9 * -2);
-          }
-          50%,
-          100% {
-            top: ($satellite-height-pc / 1.9 * -3);
-            left: 370px;
-          }
-        }
       }
 
       @include grid-media($grid-lg) {
-
         width: ($satellite-width-pc / 1.4);
         height: ($satellite-height-pc / 1.4);
-        top: 260px;
-        left: ($satellite-width-pc * -1);
-
-        @keyframes  satellite {
-          0% {
-          top: 260px;
-            left: ($satellite-width-pc / 1.4 * -2);
-          }
-          50%,
-          100% {
-            top: ($satellite-height-pc / 1.4 * -3);
-            left: 400px;
-          }
-        }
       }
     }
   }
