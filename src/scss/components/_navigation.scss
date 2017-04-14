@@ -46,7 +46,6 @@ body{
   max-height: calc(100vh - #{$navigation-height-sm});
 }
 
-.menu-en-pages-container,
 .main-navigation,
 .main-small-navigation{
   background: $navigation-base-bg;
@@ -109,6 +108,7 @@ body{
   .menu-all-pages-container{
     @extend .grid-container;
     height: $navigation-height-sm;
+    width: 100%;
 
     @media only screen and ( min-width: $wordcamp-break-point ){
       height: $navigation-height;
@@ -116,6 +116,7 @@ body{
 
     & > .menu{
       display: block;
+
       & > li{
         height: $navigation-height-sm;
         display: inline-block;
@@ -191,7 +192,7 @@ body{
 .main-small-navigation{
   @extend %header-bg;
   .menu-all-pages-container{
-		@extend %sp-menu;
+    @extend %sp-menu;
     z-index: 10;
     position: relative;
     top: -1 * $navigation-height-sm;
@@ -209,11 +210,39 @@ body{
       @include sub-menu;
 
       &.right{
-        display: none;
-        @media only screen and ( min-width: $wordcamp-break-point ){
-          display: inline-block;
-          width: 50%;
-          top: 0;
+        background-color: $navigation-secondary-bg;
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+        top: 0;
+        & > a{
+          &:before{
+            @extend %fa;
+            content: $fa-var-globe;
+            margin-right: 0.5em;
+          }
+        }
+      }
+      & > .sub-menu{
+        & > li{
+          &:first-child{
+            border-top: 1px solid $navigation-submenu-border;
+          }
+          & > .sub-menu{
+            & > li{
+              &:first-child{
+                border-top: 1px solid $navigation-submenu-border;
+              }
+              & > a{
+                &:before{
+                  @extend %fa;
+                  content: $fa-var-caret-right;
+                  color: transparent;
+                  margin-right: 0.5em;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -233,7 +262,7 @@ body{
     }
   }
 
-  .menu-toggle{
+  .menu-toggle {
     position: relative;
     z-index: 11;
     width: 50%;
@@ -242,19 +271,22 @@ body{
     text-transform: uppercase;
     @extend %link;
 
-    &:before{
+    &:before {
       @extend %fa;
       content: $fa-var-navicon;
       margin-right: 0.5em;
     }
     &.toggled-on {
-      &:before{
+      &:before {
         content: $fa-var-close;
       }
       & + div + .menu-all-pages-container .menu {
         & > li {
           display: block;
-          &.right {
+          &:last-child {
+            border-bottom: none;
+          }
+          &.right li {
             display: none;
           }
         }
@@ -267,10 +299,9 @@ body{
 }
 
 .sub-menu {
-  box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
-
   @media only screen and ( min-width: $wordcamp-break-point ) {
     border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
   }
 
   li {
@@ -310,33 +341,6 @@ body{
         }
       }
     }
-  }
-}
-
-.menu-en-pages-container {
-  @extend %sp-menu;
-  right: 0;
-  top: 0;
-  width: 50%;
-
-  @media only screen and ( min-width: $wordcamp-break-point ) {
-    display: none;
-  }
-
-  & > ul {
-   ul:not(:target) {
-      border: solid 1px red;
-      //display: none;
-   }
-
-   ul:target {
-     border: solid 1px blue;
-      //display: block;
-   }
-
-   &:last-child {
-    border-bottom: 1px solid $navigation-submenu-border;
-   }
   }
 }
 
