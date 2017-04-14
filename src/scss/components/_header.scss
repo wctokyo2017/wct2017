@@ -134,6 +134,7 @@ body {
       height: ($satellite-height-pc / 3.4);
       left: ($satellite-width-pc * -1);
       top: ($satellite-height-pc * -2);
+      z-index: 20;
 
       @keyframes  satellite {
         0% {
@@ -228,6 +229,7 @@ body {
     background-size: 258px, 56px, 188px, 235px;
     height: 220px;
     top: 0;
+    z-index: 30;
 
     @include grid-media($grid-xs) {
       background-position: 50% 40px, 50% 140px, 50% 165px, 50% 225px;
@@ -346,6 +348,7 @@ body {
 
 .header-star {
   overflow: hidden;
+  z-index: 10;
 
   &::before, &::after {
     content: '';
