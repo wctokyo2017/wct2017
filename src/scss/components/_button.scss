@@ -15,6 +15,9 @@
   &.full{
     width: 100%;
   }
+  &.disabled{
+    cursor: not-allowed;
+  }
 }
 
 input.btn{
@@ -54,6 +57,31 @@ a{
       &:link, &:visited, &:active{
         background-color: $wct-btn-disabled-bg;
       }
+    }
+  }
+}
+
+input{
+  &.btn{
+    border: none;
+    font-size: 16px;
+    color: $wct-btn-color;
+    background: $wct-btn-bg;
+    &:hover{
+      background: #0288d1;
+      color: $wct-btn-color;
+    }
+    &.hollow{
+      border: 1px solid $wct-btn-color;
+      background: transparent;
+      &:hover{
+        background: $wct-btn-color;
+        color: $wct-btn-bg;
+      }
+    }
+    &.disabled{
+      pointer-events: none;
+      background-color: $wct-btn-disabled-bg;
     }
   }
 }
