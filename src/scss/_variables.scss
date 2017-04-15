@@ -1,3 +1,7 @@
+// Detect deploy mode
+$env: 'development' !default;
+
+
 //
 //------------------------
 // Color setting
@@ -42,9 +46,10 @@ $fa-font-size-base: 1em;
 // Path setting
 //
 //
-
-$img-path: "../images/";
-
+$img-path: "../images/" !default;
+@if($env == 'production') {
+  $img-path: "//wctokyo2017.github.io/wct2017/assets/images/";
+}
 
 //
 //------------------------

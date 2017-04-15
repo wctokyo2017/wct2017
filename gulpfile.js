@@ -130,6 +130,9 @@ gulp.task('sass', function () {
   return gulp.src(paths.scssPath + '**/style.scss')
     // .pipe($.changed(paths.cssDest, {extension: '.css'}))
     .pipe($.sourcemaps.init())
+    .pipe($.sassVariables({
+      $env: deployFlg ? 'production' : 'development'
+    }))
     .pipe($.cssGlobbing({ extensions: ['.scss'] }))
     .pipe($.sass(nodeSassConf).on('error', $.sass.logError))
     .pipe($.autoprefixer({
