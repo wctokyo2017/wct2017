@@ -24,8 +24,12 @@
     @extend .btn;
     @extend .btn.hollow;
     font-size: 14px;
-    padding: 10px 20px !important;
-
+    padding: 20px !important;
+    @include wct-small-screen() {
+      padding: 10px !important;
+    }
+    height: auto;
+    line-height: 1;
   }
 
 }
