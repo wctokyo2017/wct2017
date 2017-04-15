@@ -74,6 +74,14 @@ npm run server
 npm run production
 ```
 
+本番用のリソースは静的なHTMLとして Github Pages にデプロイされます。
+
+[wctokyo2017.github.io/wct2017/](https://wctokyo2017.github.io/wct2017/)
+
+WordCamp用サイトは以下のCSSを参照することで、デザインが適用されます。
+
+https://wctokyo2017.github.io/wct2017/assets/css/style.css
+
 ## 依存技術
 
 - [Boubon](http://bourbon.io) & [Neat](http://neat.bourbon.io)
