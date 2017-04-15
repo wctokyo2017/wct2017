@@ -17,6 +17,15 @@
   }
 }
 
+input.btn{
+  cursor: pointer;
+}
+
+.pushbutton-wide{
+  @extend .btn;
+  width: 100%;
+}
+
 a{
   &.btn{
     &:link, &:visited{
