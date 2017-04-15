@@ -4,44 +4,6 @@ body {
   @include grid-media($grid-lg) {
     background-repeat: no-repeat, repeat-x;
   }
-
-  /**
-   * Home
-   */
-  &.home {
-    background-image: url(#{$img-path}header-top-s.jpg);
-    background-position: 50% 0;
-    background-size: 1358px;
-
-    @include grid-media($grid-xs) {
-      background-image: url(#{$img-path}header-top.jpg);
-      background-position: 50% -8px;
-      background-size: 1866px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      background-position: 50% -18px;
-      background-size: 2375px;
-    }
-
-    @include grid-media($grid-sm) {
-      background-position: 50% -24px;
-      background-size: 2715px;
-    }
-
-    @include grid-media($grid-md) {
-      background-position: 50% -42px;
-      background-size: 3258px;
-    }
-
-    @include grid-media($grid-lg) {
-      background-image: url(#{$img-path}header-top.jpg),
-                        url(#{$img-path}header-top-bg.jpg);
-      background-position: 50% -75px, 0 -25px;
-      background-size: 3902px 920px, 10px 920px;
-    }
-  }
-
   /**
    * Single page, Page, Archive page
    */
@@ -85,6 +47,44 @@ body {
       background-size: 2300px, 5px;
     }
   }
+
+  /**
+   * Home
+   */
+  &.home {
+    background-image: url(#{$img-path}header-top-s.jpg);
+    background-position: 50% 0;
+    background-size: 1358px;
+
+    @include grid-media($grid-xs) {
+      background-image: url(#{$img-path}header-top.jpg);
+      background-position: 50% -8px;
+      background-size: 1866px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      background-position: 50% -18px;
+      background-size: 2375px;
+    }
+
+    @include grid-media($grid-sm) {
+      background-position: 50% -24px;
+      background-size: 2715px;
+    }
+
+    @include grid-media($grid-md) {
+      background-position: 50% -42px;
+      background-size: 3258px;
+    }
+
+    @include grid-media($grid-lg) {
+      background-image: url(#{$img-path}header-top.jpg),
+      url(#{$img-path}header-top-bg.jpg);
+      background-position: 50% -75px, 0 -25px;
+      background-size: 3902px 920px, 10px 920px;
+    }
+  }
+
 }
 
 .site-header {
@@ -92,6 +92,33 @@ body {
   padding: 0;
   position: relative;
   width: 100%;
+
+  /**
+   * Single page, Page, Archive page
+   */
+  .single &, .page &, .archive & {
+    height: 160px;
+
+    @include grid-media($grid-xs) {
+      height: 195px;
+    }
+
+    @include grid-media($grid-sm-s) {
+      height: 275px;
+    }
+
+    @include grid-media($grid-sm) {
+      height: 320px;
+    }
+
+    @include grid-media($grid-md) {
+      height: 380px;
+    }
+
+    @include grid-media($grid-lg) {
+      height: 385px;
+    }
+  }
 
   /**
    * Home
@@ -167,33 +194,6 @@ body {
         width: ($satellite-width-pc / 1.4);
         height: ($satellite-height-pc / 1.4);
       }
-    }
-  }
-
-  /**
-   * Single page, Page, Archive page
-   */
-  .single &, .page &, .archive & {
-    height: 160px;
-
-    @include grid-media($grid-xs) {
-      height: 195px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      height: 275px;
-    }
-
-    @include grid-media($grid-sm) {
-      height: 320px;
-    }
-
-    @include grid-media($grid-md) {
-      height: 380px;
-    }
-
-    @include grid-media($grid-lg) {
-      height: 385px;
     }
   }
 }
