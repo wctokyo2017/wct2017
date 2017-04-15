@@ -1,3 +1,6 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 html, body{
   padding: 0;
@@ -6,6 +9,10 @@ html, body{
 
 .hide{
   display: none;
+}
+
+.text-center {
+  text-align: center;
 }
 
 body{
@@ -69,16 +76,23 @@ body{
 @mixin white-link($underline: false){
   transition: color .3s 0 linear;
   &:link, &:visited{
-    color: #fff;
+    color: $link-color;
+    text-decoration: none;
     @if($underline){
-      text-decoration: underline;
+      background: linear-gradient(transparent 60%, $link-line-color 0%);
     }@else{
-      text-decoration: none;
+      background: none;
     }
   }
   &:hover, &:active{
-    color: #ffffbc;
+    color: $link-hover-color;
     text-decoration: none;
+    @if($underline){
+      color: $link-color;
+      background: $link-line-color;
+    }@else{
+      background: none;
+    }
   }
   @content;
 }

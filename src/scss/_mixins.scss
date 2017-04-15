@@ -7,6 +7,12 @@
   }
 }
 
+@mixin wct-md-screen( $size: $admin-bar-break-point ) {
+  @media only screen and ( max-width: $size ) {
+    @content;
+  }
+}
+
 /**
  * aicon rotation
  */
@@ -40,5 +46,15 @@
 
   &:last-child{
     border-bottom: none;
+  }
+}
+
+/**
+ * sub menu
+ */
+@mixin base-margin() {
+  margin: 40px 0;
+  @include wct-small-screen(){
+    margin: 30px 0;
   }
 }

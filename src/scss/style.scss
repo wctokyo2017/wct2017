@@ -17,4 +17,10 @@
 @import 'wp/wp-classes';
 @import 'wp/wp-editor-style';
 
-@import "components/*";
+@import "components/main";
+@import "components/button";
+@import "components/header";
+@import "components/navigation";
+@import "components/pagination";
+@import "components/sidebar";
+@import "components/footer";

@@ -6,7 +6,6 @@
 
 #footer-widgets{
   @extend .grid-container;
-
 }
 
 .site-info{
@@ -16,13 +15,15 @@
   padding-top: 25px;
   padding-bottom: 25px;
   a{
+    text-decoration: none;
     &:link, &:visited{
-      color: #fff;
-      text-decoration: none;
+      color: $link-color;
     }
     &:hover, &:active{
-      color: #fff;
-      text-decoration: underline;
+      color: $link-hover-color;
     }
+  }
+  .site-info-network {
+    display: none;
   }
 }
