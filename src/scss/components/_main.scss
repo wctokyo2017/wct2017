@@ -72,6 +72,11 @@ article.hentry {
     font-size: 16px;
     line-height: 1.7;
     overflow-x: hidden;
+    body[class*="-en"] &,
+    body.category-english &{
+      // English post
+      font-size: 17px;
+    }
     & > *:first-child{
       margin-top: 0 !important;
     }
