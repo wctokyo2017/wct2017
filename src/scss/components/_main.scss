@@ -179,10 +179,12 @@ article.hentry {
     }
     ul, dl, ol{
       @include base-margin;
-      list-style-position: inside;
     }
     ul, ol {
-      padding: 0 0 0 1em;
+      padding: 0 0 0 2em;
+      li{
+        list-style-position: outside;
+      }
     }
     ul {
       ul {
