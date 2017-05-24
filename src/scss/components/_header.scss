@@ -52,6 +52,7 @@ body {
    * Home
    */
   &.home {
+    /*
     background-image: url(#{$img-path}header-top-s.jpg);
     background-position: 50% 0;
     background-size: 1358px;
@@ -83,6 +84,7 @@ body {
       background-position: 50% -75px, 0 -25px;
       background-size: 3902px 920px, 10px 920px;
     }
+    */
   }
 
 }
@@ -124,8 +126,7 @@ body {
    * Home
    */
   .home & {
-    height: 235px;
-
+    /*
     @include grid-media($grid-xs) {
       height: 300px;
     }
@@ -145,6 +146,7 @@ body {
     @include grid-media($grid-lg) {
       height: 595px;
     }
+    */
 
     // 衛星
     &::before {
@@ -161,7 +163,7 @@ body {
       height: ($satellite-height-pc / 3.4);
       left: ($satellite-width-pc * -1);
       top: ($satellite-height-pc * -2);
-      z-index: 20;
+      z-index: 40;
 
       @keyframes  satellite {
         0% {
@@ -203,9 +205,9 @@ body {
 }
 
 .site-title {
+  position: relative;
   background-repeat: no-repeat;
   display: block;
-  position: absolute;
   margin: 0 auto;
   width: 100%;
 
@@ -224,13 +226,11 @@ body {
   .single &, .page &, .archive & {
     background-image: url(#{$img-path}wct2017-logo.svg),
                       url(#{$img-path}wct2017-theme.svg),
-                      url(#{$img-path}wct2017-sub-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
     $grid-posY: 10px;
     $grid-posX: calc(50% - 60px);
     background-position: $grid-posX $grid-posY,
                          $grid-posX $grid-posY + 60px,
-                         $grid-posX $grid-posY + 80px,
                          $grid-posX $grid-posY + 100px;
     background-size: 200px, 50px, 160px, 195px;
     height: 155px;
@@ -241,7 +241,6 @@ body {
       $grid-xs-posX: calc(50% - 75px);
       background-position: $grid-xs-posX $grid-xs-posY,
                            $grid-xs-posX $grid-xs-posY + 65px,
-                           $grid-xs-posX $grid-xs-posY + 85px,
                            $grid-xs-posX $grid-xs-posY + 115px;
       background-size: 210px, 50px, 175px, 215px;
       height: 185px;
@@ -252,7 +251,6 @@ body {
       $grid-sm-s-posX: calc(50% - 130px);
       background-position: $grid-sm-s-posX $grid-sm-s-posY,
                            $grid-sm-s-posX $grid-sm-s-posY + 85px,
-                           $grid-sm-s-posX $grid-sm-s-posY + 110px,
                            $grid-sm-s-posX $grid-sm-s-posY + 165px;
       background-size: 265px, 60px, 210px, 265px;
       height: 270px;
@@ -263,7 +261,6 @@ body {
       $grid-sm-posX: calc(50% - 130px);
       background-position: $grid-sm-posX $grid-sm-posY,
                            $grid-sm-posX $grid-sm-posY + 100px,
-                           $grid-sm-posX $grid-sm-posY + 130px,
                            $grid-sm-posX $grid-sm-posY + 200px;
       background-size: 318px, 73px, 265px, 325px;
       height: 330px;
@@ -274,7 +271,6 @@ body {
       $grid-md-posX: calc(50% - 185px);
       background-position: $grid-md-posX $grid-md-posY,
                            $grid-md-posX $grid-md-posY + 118px,
-                           $grid-md-posX $grid-md-posY + 158px,
                            $grid-md-posX $grid-md-posY + 240px;
       background-size: 378px, 88px, 314px, 385px;
       height: 370px;
@@ -286,7 +282,6 @@ body {
       $grid-lg-s-posX: calc(50% - 190px);
       background-position: $grid-lg-s-posX $grid-lg-title-posY,
                            $grid-lg-s-posX $grid-lg-title-posY + 120px,
-                           $grid-lg-s-posX $grid-lg-title-posY + 160px,
                            $grid-lg-s-posX $grid-lg-title-posY + 240px;
       background-size: 386px, 89px, 318px, 400px;
       height: 380px;
@@ -296,7 +291,6 @@ body {
       $grid-lg-posX: calc(50% - 240px);
       background-position: $grid-lg-posX $grid-lg-title-posY,
                            $grid-lg-posX $grid-lg-title-posY + 120px,
-                           $grid-lg-posX $grid-lg-title-posY + 160px,
                            $grid-lg-posX $grid-lg-title-posY + 240px;
     }
   }
@@ -305,538 +299,43 @@ body {
    * Home
    */
   .home & {
-    background-image: url(#{$img-path}wct2017-logo.svg),
-    url(#{$img-path}wct2017-theme.svg),
-    url(#{$img-path}wct2017-sub-theme.svg),
-    url(#{$img-path}wct2017-date.svg);
-    background-position: 50% 23px, 50% 105px, 50% 128px, 50% 165px;
-    background-size: 258px, 56px, 188px, 235px;
-    height: 220px;
+    background-image: url(#{$img-path}header-bg.svg),
+                      url(#{$img-path}wct2017-logo.svg),
+                      url(#{$img-path}wct2017-theme.svg),
+                      url(#{$img-path}wct2017-date.svg);
+    background-position: 50% -100%,
+                         50% 112px,
+                         50% 290px,
+                         50% 340px;
+    background-size: auto, 517px, 84px, 470px;
+    height: 650px;
+    width: 1500px;
+    margin: 0 calc((100vw - 1500px) / 2);
     top: 0;
     z-index: 30;
 
-    @include grid-media($grid-xs) {
-      background-position: 50% 40px, 50% 140px, 50% 165px, 50% 225px;
-      background-size: 335px, 56px, 185px, 255px;
-      height: 295px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      background-position: 50% 55px, 50% 185px, 50% 218px, 50% 292px;
-      background-size: 420px, 72px, 235px, 325px;
-      height: 380px;
-    }
-
-    @include grid-media($grid-sm) {
-      background-position: 50% 70px, 50% 215px, 50% 253px, 50% 340px;
-      background-size: 486px, 82px, 270px, 365px;
-      height: 435px;
-    }
-
-    @include grid-media($grid-md) {
-      background-position: 50% 75px, 50% 255px, 50% 300px, 50% 400px;
-      background-size: 580px, 100px, 325px, 440px;
-      height: 505px;
-    }
-
-    @include grid-media($grid-lg) {
-      background-position: 50% 80px, 50% 295px, 50% 345px, 50% 465px;
-      background-size: 670px, 110px, 365px, 445px;
-      height: 570px;
-    }
-  }
-}
-
-.header-star {
-  z-index: 10;
-
-  &::before, &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 2px;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 1px;
-    opacity: 1;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0.6),
-                0 0 2px rgba(255, 255, 255, 0.7),
-                0 0 3px rgba(255, 255, 255, 0.8);
-  }
-
-  &.twinkl {
-    &::before, &::after {
-      width: 4px;
-      height: 4px;
-      border-radius: 2px;
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-                  0 0 8px rgba(255, 255, 255, 0.8),
-                  0 0 10px rgba(255, 255, 255, 0.9);
-    }
-  }
-
-  &:nth-child(1) {
-    &::before, &::after {
-      top: 190px;
-      margin-left: calc(50% - 120px);
-    }
-  }
-  &:nth-child(2) {
-    &::before, &::after {
-      display: none;
-    }
-  }
-  &:nth-child(3) {
-    &::before, &::after {
-      top: 90px;
-      margin-left: calc(50% - 100px);
-    }
-  }
-  &:nth-child(4) {
-    &::before, &::after {
-      top: 100px;
-      margin-left: calc(50% - 170px);
-    }
-  }
-  &:nth-child(5) {
-    &::before, &::after {
-      display: none;
-    }
-  }
-  &:nth-child(6) {
-    &::before, &::after {
-      top: 195px;
-      margin-left: calc(50% + 110px);
-    }
-  }
-  &:nth-child(7) {
-    &::before, &::after {
-      display: none;
-    }
-  }
-  &:nth-child(8) {
-    &::before, &::after {
-      display: none;
-    }
-  }
-  &:nth-child(9) {
-    &::before, &::after {
-      top: 210px;
-      margin-left: calc(50% - 115px);
-    }
-  }
-  &:nth-child(10) {
-    &::before, &::after {
-      top: 140px;
-      margin-left: calc(50% - 130px);
-    }
-  }
-  &:nth-child(11) {
-    &::before, &::after {
-      top: 95px;
-      margin-left: calc(50% + 90px);
-    }
-  }
-  &:nth-child(12) {
-    &::before, &::after {
-      top: 215px;
-      margin-left: calc(50% + 120px);
-    }
-  }
-
-  @include grid-media($grid-xs) {
-    &:nth-child(1) {
-      &::before, &::after {
-        top: 230px;
-        margin-left: calc(50% - 160px);
-      }
-    }
-    &:nth-child(2) {
-    }
-    &:nth-child(3) {
-      &::before, &::after {
-        top: 100px;
-        margin-left: calc(50% - 130px);
-      }
-    }
-    &:nth-child(4) {
-      &::before, &::after {
-        top: 110px;
-        margin-left: calc(50% - 220px);
-      }
-    }
-    &:nth-child(5) {
-    }
-    &:nth-child(6) {
-      &::before, &::after {
-        top: 240px;
-        margin-left: calc(50% + 150px);
-      }
-    }
-    &:nth-child(7) {
-    }
-    &:nth-child(8) {
-    }
-    &:nth-child(9) {
-      &::before, &::after {
-        top: 270px;
-        margin-left: calc(50% - 155px);
-      }
-    }
-    &:nth-child(10) {
-      &::before, &::after {
-        top: 170px;
-        margin-left: calc(50% - 180px);
-      }
-    }
-    &:nth-child(11) {
-      &::before, &::after {
-        top: 110px;
-        margin-left: calc(50% + 120px);
-      }
-    }
-    &:nth-child(12) {
-      &::before, &::after {
-        top: 270px;
-        margin-left: calc(50% + 160px);
-      }
-    }
-  }
-
-  @include grid-media($grid-sm-s) {
-    &:nth-child(1) {
-      &::before, &::after {
-        top: 280px;
-        margin-left: calc(50% - 200px);
-      }
-    }
-    &:nth-child(2) {
-    }
-    &:nth-child(3) {
-      &::before, &::after {
-        top: 110px;
-        margin-left: calc(50% - 150px);
-      }
-    }
-    &:nth-child(4) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% - 275px);
-      }
-    }
-    &:nth-child(5) {
-    }
-    &:nth-child(6) {
-      &::before, &::after {
-        top: 290px;
-        margin-left: calc(50% + 200px);
-      }
-    }
-    &:nth-child(7) {
-    }
-    &:nth-child(8) {
-    }
-    &:nth-child(9) {
-      &::before, &::after {
-        top: 330px;
-        margin-left: calc(50% - 190px);
-      }
-    }
-    &:nth-child(10) {
-      &::before, &::after {
-        top: 200px;
-        margin-left: calc(50% - 220px);
-      }
-    }
-    &:nth-child(11) {
-      &::before, &::after {
-        top: 120px;
-        margin-left: calc(50% + 160px);
-      }
-    }
-    &:nth-child(12) {
-      &::before, &::after {
-        top: 320px;
-        margin-left: calc(50% + 210px);
-      }
-    }
-  }
-
-  @include grid-media($grid-sm) {
-    &:nth-child(1) {
-      &::before, &::after {
-        top: 300px;
-        margin-left: calc(50% - 250px);
-      }
-    }
-    &:nth-child(2) {
-    }
-    &:nth-child(3) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% - 180px);
-      }
-    }
-    &:nth-child(4) {
-      &::before, &::after {
-        top: 140px;
-        margin-left: calc(50% - 290px);
-      }
-    }
-    &:nth-child(5) {
-    }
-    &:nth-child(6) {
-      &::before, &::after {
-        top: 330px;
-        margin-left: calc(50% + 220px);
-      }
-    }
-    &:nth-child(7) {
-    }
-    &:nth-child(8) {
-    }
-    &:nth-child(9) {
-      &::before, &::after {
-        top: 365px;
-        margin-left: calc(50% - 220px);
-      }
-    }
-    &:nth-child(10) {
-      &::before, &::after {
-        top: 230px;
-        margin-left: calc(50% - 260px);
-      }
-    }
-    &:nth-child(11) {
-      &::before, &::after {
-        top: 145px;
-        margin-left: calc(50% + 180px);
-      }
-    }
-    &:nth-child(12) {
-      &::before, &::after {
-        top: 360px;
-        margin-left: calc(50% + 240px);
-      }
-    }
-  }
-
-  @include grid-media($grid-md) {
-    &:nth-child(1) {
-      &::before, &::after {
-        top: 330px;
-        margin-left: calc(50% - 280px);
-      }
-    }
-    &:nth-child(2) {
-      &::before, &::after {
-        display: block;
-        top: 320px;
-        margin-left: calc(50% - 380px);
-      }
-    }
-    &:nth-child(3) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% - 220px);
-      }
-    }
-    &:nth-child(4) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% - 360px);
-      }
-    }
-    &:nth-child(5) {
-      &::before, &::after {
-        display: block;
-        top: 180px;
-        margin-left: calc(50% + 380px);
-      }
-    }
-    &:nth-child(6) {
-      &::before, &::after {
-        top: 360px;
-        margin-left: calc(50% + 270px);
-      }
-    }
-    &:nth-child(7) {
-      &::before, &::after {
-        display: block;
-        top: 340px;
-        margin-left: calc(50% + 360px);
-      }
-    }
-    &:nth-child(8) {
-      &::before, &::after {
-        display: block;
-        top: 405px;
-        margin-left: calc(50% + 350px);
-      }
-    }
-    &:nth-child(9) {
-      &::before, &::after {
-        top: 400px;
-        margin-left: calc(50% - 260px);
-      }
-    }
-    &:nth-child(10) {
-      &::before, &::after {
-        top: 230px;
-        margin-left: calc(50% - 310px);
-      }
-    }
-    &:nth-child(11) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% + 220px);
-      }
-    }
-    &:nth-child(12) {
-      &::before, &::after {
-        top: 400px;
-        margin-left: calc(50% + 300px);
-      }
-    }
-  }
-
-  @include grid-media($grid-lg) {
-    &:nth-child(1) {
-      &::before, &::after {
-        top: 380px;
-        margin-left: calc(50% - 350px);
-      }
-    }
-    &:nth-child(2) {
-      &::before, &::after {
-        top: 350px;
-        margin-left: calc(50% - 520px);
-      }
-    }
-    &:nth-child(3) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% - 250px);
-      }
-    }
-    &:nth-child(4) {
-      &::before, &::after {
-        top: 120px;
-        margin-left: calc(50% - 450px);
-      }
-    }
-    &:nth-child(5) {
-      &::before, &::after {
-        top: 180px;
-        margin-left: calc(50% + 500px);
-      }
-    }
-    &:nth-child(6) {
-      &::before, &::after {
-        top: 400px;
-        margin-left: calc(50% + 320px);
-      }
-    }
-    &:nth-child(7) {
-      &::before, &::after {
-        top: 380px;
-        margin-left: calc(50% + 450px);
-      }
-    }
-    &:nth-child(8) {
-      &::before, &::after {
-        top: 450px;
-        margin-left: calc(50% + 530px);
-      }
-    }
-    &:nth-child(9) {
-      &::before, &::after {
-        top: 450px;
-        margin-left: calc(50% - 300px);
-      }
-    }
-    &:nth-child(10) {
-      &::before, &::after {
-        top: 250px;
-        margin-left: calc(50% - 350px);
-      }
-    }
-    &:nth-child(11) {
-      &::before, &::after {
-        top: 130px;
-        margin-left: calc(50% + 250px);
-      }
-    }
-    &:nth-child(12) {
-      &::before, &::after {
-        top: 450px;
-        margin-left: calc(50% + 350px);
-      }
-    }
-  }
-
-  &:nth-child(1), &:nth-child(7) {
     &::before {
-      animation: header_star 2s linear 2s infinite;
+      content: '';
+      display: block;
+      height: 160px;
+      width: 137px;
+      background-image: url(#{$img-path}ferris-wheel.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 455px;
+      bottom: 64px;
     }
-    &::after {
-      animation: header_star 6s linear 4s infinite;
-    }
-  }
 
-  &:nth-child(2), &:nth-child(8) {
-    &::before {
-      animation: header_star 6s linear 1s infinite;
-    }
     &::after {
-      animation: header_star 2s linear 3s infinite;
-    }
-  }
-
-  &:nth-child(3), &:nth-child(9) {
-    &::before {
-      animation: header_star 2s linear 2s infinite;
-    }
-    &::after {
-      animation: header_star 6s linear 4s infinite;
-    }
-  }
-
-  &:nth-child(4), &:nth-child(10) {
-    &::before {
-      animation: header_star 3s linear 1s infinite;
-    }
-    &::after {
-      animation: header_star 6s linear 3s infinite;
-    }
-  }
-
-  &:nth-child(5), &:nth-child(11) {
-    &::before {
-      animation: header_star 6s linear 1s infinite;
-    }
-    &::after {
-      animation: header_star 2s linear 3s infinite;
-    }
-  }
-
-  &:nth-child(6), &:nth-child(12) {
-    &::before {
-      animation: header_star 6s linear 2s infinite;
-    }
-    &::after {
-      animation: header_star 2s linear 4s infinite;
-    }
-  }
-
-  @keyframes header_star {
-    0%, 50% {
-      opacity: 0;
-    }
-    25% {
-      opacity: 1;
+      content: '';
+      display: block;
+      height: 84px;
+      width: 121px;
+      background-image: url(#{$img-path}kaminarimon.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 400px;
+      bottom: 60px;
     }
   }
 }

@@ -21,6 +21,10 @@ body{
   background-color: $wct-bg-color;
 }
 
+#page {
+  overflow: hidden;
+}
+
 .grid-container{
   box-sizing: border-box;
   padding-right: 20px;

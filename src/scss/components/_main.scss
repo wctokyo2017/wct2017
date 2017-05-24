@@ -9,8 +9,6 @@
 article.hentry {
   background-color: rgba(255, 255, 255, .1);
   border-radius: 5px;
-  box-shadow: 0 2px 3px 0 rgba( 0, 0, 0, .2 );
-  color: #fff;
   padding: 60px 40px;
   margin-bottom: 40px;
   &:last-of-type {
@@ -285,9 +283,6 @@ article.hentry {
   &-meta{
     padding: 10px;
     font-size: 0.85em;
-    a{
-      @include white-link(true);
-    }
     .entry-header &{
       // In header
     }
