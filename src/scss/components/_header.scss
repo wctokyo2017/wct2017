@@ -304,15 +304,27 @@ body {
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
     background-position: 50% -100%,
-                         50% 112px,
+                         50% (112px * 1.5),
                          50% 290px,
                          50% 340px;
-    background-size: auto, 517px, 84px, 470px;
+    background-size: auto, (517px / 1.5), (84px / 1.5), (470px / 1.5);
     height: 650px;
     width: 1500px;
     margin: 0 calc((100vw - 1500px) / 2);
     top: 0;
     z-index: 30;
+
+    @include grid-media($grid-sm) {
+      background-image: url(#{$img-path}header-bg.svg),
+                        url(#{$img-path}wct2017-logo.svg),
+                        url(#{$img-path}wct2017-theme.svg),
+                        url(#{$img-path}wct2017-date.svg);
+      background-position: 50% -100%,
+                           50% 112px,
+                           50% 290px,
+                           50% 340px;
+      background-size: auto, 517px, 84px, 470px;
+    }
 
     &::before {
       content: '';
