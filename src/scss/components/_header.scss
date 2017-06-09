@@ -7,7 +7,7 @@ body {
   /**
    * Single page, Page, Archive page
    */
-  &.single, &.page, &.archive {
+  &.single, &.page, &.archive, &.blog, &.error404 {
     background-image: url(#{$img-path}header-sub-s.jpg);
     background-position: calc(50% + 100px) 0;
     background-size: 810px;
@@ -96,7 +96,7 @@ body {
   /**
    * Single page, Page, Archive page
    */
-  .single &, .page &, .archive & {
+  .single &, .page &, .archive &, .blog &, .error404 & {
     height: 160px;
 
     @include grid-media($grid-xs) {
@@ -221,7 +221,7 @@ body {
   /**
    * Single page, Page, Archiv page
    */
-  .single &, .page &, .archive & {
+  .single &, .page &, .archive &, .blog &, .error404 & {
     background-image: url(#{$img-path}wct2017-logo.svg),
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-sub-theme.svg),
