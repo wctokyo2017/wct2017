@@ -59,21 +59,20 @@ $img-path: "../images/" !default;
 $navigation-height: 50px;
 $navigation-height-sm: $navigation-height - 10;
 
-$navigation-base-bg: #0B3359;
+$navigation-base-bg: #1d909d;
 
 $navigation-base-bg-transparent: rgba( 0, 0, 0, .5 );
 $navigation-base-bg-transparent-hover: rgba( 255, 255, 255, .1 );
 
-$navigation-secondary-bg: #0271a7;
-$navigation-secondary-bg-hover: #0392c1;
+$navigation-secondary-bg: #fc4482;
+$navigation-secondary-bg-hover: #fff;
 
 $navigation-link-pad: 20px;
 
-$navigation-submenu-bg: #000f25;
-$navigation-submenu-bg-hover: #163b65;
+$navigation-submenu-bg: $navigation-base-bg;
 
-$navigation-submenu-border-top: #000;
-$navigation-submenu-border: #85abde;
+$navigation-submenu-border-top: #b4dee5;
+$navigation-submenu-border: #0a6063;
 
 
 //

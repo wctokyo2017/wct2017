@@ -326,6 +326,7 @@ body{
       text-align: center;
       &:hover, &:active {
         background-color: $navigation-secondary-bg-hover;
+        color: $navigation-secondary-bg;
       }
 
       &:before {
