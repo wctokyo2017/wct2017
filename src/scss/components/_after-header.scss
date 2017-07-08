@@ -20,10 +20,18 @@
       line-height: 1;
 
       > a {
+        position: relative;
+        z-index: 2;
         display: block;
+        background-color: #e1f7fc;
         color: #333;
         text-decoration: none;
-        padding: 15px;
+        padding: 15px 20px;
+
+        &:hover, &:active, &:focus {
+          background-color: #fff;
+          color: #ff4081;
+        }
       }
     }
 
@@ -35,13 +43,15 @@
           @extend %fa;
           @include aicon-rot(8px);
           content: $fa-var-play;
-          transform: rotateZ( 90deg );
+          transform: rotateZ(90deg);
           margin-left: 0.5em;
           vertical-align: middle;
         }
 
-        &:hover:after{
-          transform: rotateZ(270deg);
+        &:hover, &:active, &:focus {
+          &::after {
+            transform: rotateZ(270deg);
+          }
         }
       }
 
@@ -56,14 +66,24 @@
       position: absolute;
       top: 100%;
       left: 0;
+      z-index: 1;
       list-style: none;
       margin: 0;
       display: none;
       padding: 0;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
+      border-radius: 0 0 5px 5px;
+      overflow: hidden;
 
       > .menu-item {
-        > a {
-          background-color: #e1f7fc;
+        line-height: 1.2;
+
+        &:not(:first-child) {
+          border-top: 1px solid #fff;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #90ced9;
         }
       }
     }
