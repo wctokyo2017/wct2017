@@ -4,91 +4,8 @@ body {
   @include grid-media($grid-lg) {
     background-repeat: no-repeat, repeat-x;
   }
-  /**
-   * Single page, Page, Archive page
-   */
-  &.single, &.page, &.archive, &.blog, &.error404 {
-    background-image: url(#{$img-path}header-sub-s.jpg);
-    background-position: calc(50% + 100px) 0;
-    background-size: 810px;
 
-    @include grid-media($grid-xs) {
-      background-image: url(#{$img-path}header-sub.jpg);
-      background-position: calc(50% + 110px) -5px;
-      background-size: 963px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      background-position: calc(50% + 130px) -30px;
-      background-size: 1468px;
-    }
-
-    @include grid-media($grid-sm) {
-      background-position: calc(50% + 160px) -55px;
-      background-size: 1878px;
-    }
-
-    @include grid-media($grid-md) {
-      background-position: calc(50% + 190px) -90px;
-      background-size: 2255px;
-    }
-
-	@include grid-media($grid-lg-s) {
-      background-image: url(#{$img-path}header-sub.jpg),
-                        url(#{$img-path}header-sub-bg.jpg);
-      background-position: calc(50% + 220px) -95px, 0 -95px;
-      background-size: 2300px, 5px;
-    }
-
-    @include grid-media($grid-lg) {
-      background-image: url(#{$img-path}header-sub.jpg),
-                        url(#{$img-path}header-sub-bg.jpg);
-      background-position: calc(50% + 240px) -95px, 0 -95px;
-      background-size: 2300px, 5px;
-    }
-  }
-
-  /**
-   * Home
-   */
-  &.home.page {
-    background-image: none;
-
-    /*
-    background-image: url(#{$img-path}header-top-s.jpg);
-    background-position: 50% 0;
-    background-size: 1358px;
-
-    @include grid-media($grid-xs) {
-      background-image: url(#{$img-path}header-top.jpg);
-      background-position: 50% -8px;
-      background-size: 1866px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      background-position: 50% -18px;
-      background-size: 2375px;
-    }
-
-    @include grid-media($grid-sm) {
-      background-position: 50% -24px;
-      background-size: 2715px;
-    }
-
-    @include grid-media($grid-md) {
-      background-position: 50% -42px;
-      background-size: 3258px;
-    }
-
-    @include grid-media($grid-lg) {
-      background-image: url(#{$img-path}header-top.jpg),
-      url(#{$img-path}header-top-bg.jpg);
-      background-position: 50% -75px, 0 -25px;
-      background-size: 3902px 920px, 10px 920px;
-    }
-    */
-  }
-
+  background-image: none;
 }
 
 .site-header {
@@ -96,110 +13,55 @@ body {
   padding: 0;
   position: relative;
   width: 100%;
+  height: auto;
 
-  /**
-   * Single page, Page, Archive page
-   */
-  .single &, .page &, .archive &, .blog &, .error404 & {
-    height: 160px;
+  // 衛星
+  &::before {
+    $satellite-width-pc: 82px;
+    $satellite-height-pc: 104px;
+    position: absolute;
+    animation: satellite 60s linear 2s infinite;
+    content: '';
+    display: block;
+    background-image: url(#{$img-path}satellite.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: ($satellite-width-pc / 3.4);
+    height: ($satellite-height-pc / 3.4);
+    left: ($satellite-width-pc * -1);
+    top: ($satellite-height-pc * -2);
+    z-index: 40;
 
-    @include grid-media($grid-xs) {
-      height: 195px;
+    @keyframes  satellite {
+      0% {
+        top: 20vw;
+        left: ($satellite-width-pc * -1);
+      }
+      50%,
+      100% {
+        top: ($satellite-height-pc * -2);
+        left: 38%;
+      }
     }
 
     @include grid-media($grid-sm-s) {
-      height: 275px;
+      width: ($satellite-width-pc / 2.8);
+      height: ($satellite-height-pc / 2.8);
     }
 
     @include grid-media($grid-sm) {
-      height: 320px;
+      width: ($satellite-width-pc / 2.3);
+      height: ($satellite-height-pc / 2.3);
     }
 
     @include grid-media($grid-md) {
-      height: 380px;
+      width: ($satellite-width-pc / 1.9);
+      height: ($satellite-height-pc / 1.9);
     }
 
     @include grid-media($grid-lg) {
-      height: 385px;
-    }
-  }
-
-  /**
-   * Home
-   */
-  .home.page & {
-    height: auto;
-
-    /*
-    @include grid-media($grid-xs) {
-      height: 300px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      height: 390px;
-    }
-
-    @include grid-media($grid-sm) {
-      height: 445px;
-    }
-
-    @include grid-media($grid-md) {
-      height: 520px;
-    }
-
-    @include grid-media($grid-lg) {
-      height: 595px;
-    }
-    */
-
-    // 衛星
-    &::before {
-      $satellite-width-pc: 82px;
-      $satellite-height-pc: 104px;
-      position: absolute;
-      animation: satellite 60s linear 2s infinite;
-      content: '';
-      display: block;
-      background-image: url(#{$img-path}satellite.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: ($satellite-width-pc / 3.4);
-      height: ($satellite-height-pc / 3.4);
-      left: ($satellite-width-pc * -1);
-      top: ($satellite-height-pc * -2);
-      z-index: 40;
-
-      @keyframes  satellite {
-        0% {
-          top: 20vw;
-          left: ($satellite-width-pc * -1);
-        }
-        50%,
-        100% {
-          top: ($satellite-height-pc * -2);
-          left: 38%;
-        }
-      }
-
-      @include grid-media($grid-sm-s) {
-        width: ($satellite-width-pc / 2.8);
-        height: ($satellite-height-pc / 2.8);
-      }
-
-      @include grid-media($grid-sm) {
-        width: ($satellite-width-pc / 2.3);
-        height: ($satellite-height-pc / 2.3);
-      }
-
-      @include grid-media($grid-md) {
-        width: ($satellite-width-pc / 1.9);
-        height: ($satellite-height-pc / 1.9);
-      }
-
-      @include grid-media($grid-lg) {
-        width: ($satellite-width-pc / 1.4);
-        height: ($satellite-height-pc / 1.4);
-      }
+      width: ($satellite-width-pc / 1.4);
+      height: ($satellite-height-pc / 1.4);
     }
   }
 }
@@ -223,135 +85,54 @@ body {
     width: 100%;
   }
 
+  background-image: url(#{$img-path}header-bg.svg),
+                    url(#{$img-path}wct2017-logo.svg),
+                    url(#{$img-path}wct2017-theme.svg),
+                    url(#{$img-path}wct2017-date.svg);
+  background-position: 50% -100%,
+                       50% (112px * 1.5),
+                       50% 290px,
+                       50% 340px;
+  background-size: auto, (517px / 1.5), (84px / 1.5), (470px / 1.5);
+  height: 650px;
+  width: 1500px;
+  margin: 0 calc((100vw - 1500px) / 2);
+  top: 0;
+  z-index: 30;
 
-  /**
-   * Single page, Page, Archiv page
-   */
-  .single &, .page &, .archive &, .blog &, .error404 & {
-    background-image: url(#{$img-path}wct2017-logo.svg),
-                      url(#{$img-path}wct2017-theme.svg),
-                      url(#{$img-path}wct2017-date.svg);
-    $grid-posY: 10px;
-    $grid-posX: calc(50% - 60px);
-    background-position: $grid-posX $grid-posY,
-                         $grid-posX $grid-posY + 60px,
-                         $grid-posX $grid-posY + 100px;
-    background-size: 200px, 50px, 160px, 195px;
-    height: 155px;
-    top: 0;
-
-    @include grid-media($grid-xs) {
-      $grid-xs-posY: 20px;
-      $grid-xs-posX: calc(50% - 75px);
-      background-position: $grid-xs-posX $grid-xs-posY,
-                           $grid-xs-posX $grid-xs-posY + 65px,
-                           $grid-xs-posX $grid-xs-posY + 115px;
-      background-size: 210px, 50px, 175px, 215px;
-      height: 185px;
-    }
-
-    @include grid-media($grid-sm-s) {
-      $grid-sm-s-posY: 40px;
-      $grid-sm-s-posX: calc(50% - 130px);
-      background-position: $grid-sm-s-posX $grid-sm-s-posY,
-                           $grid-sm-s-posX $grid-sm-s-posY + 85px,
-                           $grid-sm-s-posX $grid-sm-s-posY + 165px;
-      background-size: 265px, 60px, 210px, 265px;
-      height: 270px;
-    }
-
-    @include grid-media($grid-sm) {
-      $grid-sm-posY: 40px;
-      $grid-sm-posX: calc(50% - 130px);
-      background-position: $grid-sm-posX $grid-sm-posY,
-                           $grid-sm-posX $grid-sm-posY + 100px,
-                           $grid-sm-posX $grid-sm-posY + 200px;
-      background-size: 318px, 73px, 265px, 325px;
-      height: 330px;
-    }
-
-    @include grid-media($grid-md) {
-      $grid-md-posY: 45px;
-      $grid-md-posX: calc(50% - 185px);
-      background-position: $grid-md-posX $grid-md-posY,
-                           $grid-md-posX $grid-md-posY + 118px,
-                           $grid-md-posX $grid-md-posY + 240px;
-      background-size: 378px, 88px, 314px, 385px;
-      height: 370px;
-    }
-
-    $grid-lg-title-posY: 45px;
-
-    @include grid-media($grid-lg-s) {
-      $grid-lg-s-posX: calc(50% - 190px);
-      background-position: $grid-lg-s-posX $grid-lg-title-posY,
-                           $grid-lg-s-posX $grid-lg-title-posY + 120px,
-                           $grid-lg-s-posX $grid-lg-title-posY + 240px;
-      background-size: 386px, 89px, 318px, 400px;
-      height: 380px;
-    }
-
-    @include grid-media($grid-lg) {
-      $grid-lg-posX: calc(50% - 240px);
-      background-position: $grid-lg-posX $grid-lg-title-posY,
-                           $grid-lg-posX $grid-lg-title-posY + 120px,
-                           $grid-lg-posX $grid-lg-title-posY + 240px;
-    }
-  }
-
-  /**
-   * Home
-   */
-  .home.page & {
+  @include grid-media($grid-sm) {
     background-image: url(#{$img-path}header-bg.svg),
                       url(#{$img-path}wct2017-logo.svg),
                       url(#{$img-path}wct2017-theme.svg),
                       url(#{$img-path}wct2017-date.svg);
     background-position: 50% -100%,
-                         50% (112px * 1.5),
+                         50% 112px,
                          50% 290px,
                          50% 340px;
-    background-size: auto, (517px / 1.5), (84px / 1.5), (470px / 1.5);
-    height: 650px;
-    width: 1500px;
-    margin: 0 calc((100vw - 1500px) / 2);
-    top: 0;
-    z-index: 30;
+    background-size: auto, 517px, 84px, 470px;
+  }
 
-    @include grid-media($grid-sm) {
-      background-image: url(#{$img-path}header-bg.svg),
-                        url(#{$img-path}wct2017-logo.svg),
-                        url(#{$img-path}wct2017-theme.svg),
-                        url(#{$img-path}wct2017-date.svg);
-      background-position: 50% -100%,
-                           50% 112px,
-                           50% 290px,
-                           50% 340px;
-      background-size: auto, 517px, 84px, 470px;
-    }
+  &::before {
+    content: '';
+    display: block;
+    height: 160px;
+    width: 137px;
+    background-image: url(#{$img-path}ferris-wheel.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 455px;
+    bottom: 64px;
+  }
 
-    &::before {
-      content: '';
-      display: block;
-      height: 160px;
-      width: 137px;
-      background-image: url(#{$img-path}ferris-wheel.svg);
-      background-repeat: no-repeat;
-      position: absolute;
-      right: 455px;
-      bottom: 64px;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      height: 84px;
-      width: 121px;
-      background-image: url(#{$img-path}kaminarimon.svg);
-      background-repeat: no-repeat;
-      position: absolute;
-      right: 400px;
-      bottom: 60px;
-    }
+  &::after {
+    content: '';
+    display: block;
+    height: 84px;
+    width: 121px;
+    background-image: url(#{$img-path}kaminarimon.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 400px;
+    bottom: 60px;
   }
 }
