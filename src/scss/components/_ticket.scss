@@ -1,0 +1,61 @@
+.tix{
+
+  &_tickets_table{
+    width: 100%;
+    margin-bottom: 10px !important;
+    tr{
+      th, td{
+        border: none;
+        border-bottom: 1px solid $h-border;
+      }
+    }
+    thead{
+      tr th{
+        background: transparent;
+        border-bottom: 3px double $h-border;
+      }
+    }
+    .tix-row-coupon td{
+      border: none;
+    }
+  }
+  &-ticket-title{
+    font-weight: normal;
+  }
+  &-ticket-excerpt{
+    font-size: .85em;
+    color: #666;
+  }
+
+  &-column-price{
+    tbody &{
+      font-family: $wct-monospace;
+      text-align: right !important;
+    }
+  }
+  &-column-remaining{
+    tbody &{
+      text-align: right !important;
+      font-family: $wct-monospace;
+    }
+  }
+
+  &-column-quantity{
+    tbody &{
+      text-align: right !important;
+    }
+  }
+
+}
+
+#tix{
+
+  p{
+    text-align: center;
+    input[type=submit] {
+      float: none !important;
+      @extend .btn;
+      @extend %btn;
+    }
+  }
+}
