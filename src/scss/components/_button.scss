@@ -42,13 +42,15 @@ a{
       box-shadow: 0 0 0 0 transparent;
     }
     &.hollow{
-      border: 1px solid $wct-btn-color;
+      border: 1px solid $link-color;
       &:link, &:visited{
+        color: $link-color;
         background: transparent;
       }
       &:hover, &:active{
-        background: $wct-btn-color;
+        background: transparent;
         color: $wct-btn-bg;
+        border-color: $wct-btn-bg;
       }
     }
     &.disabled{
@@ -71,10 +73,10 @@ input{
       color: $wct-btn-color;
     }
     &.hollow{
-      border: 1px solid $wct-btn-color;
+      border: 1px solid $link-color;
       background: transparent;
       &:hover{
-        background: $wct-btn-color;
+        border-color: $wct-btn-bg;
         color: $wct-btn-bg;
       }
     }
