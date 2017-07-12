@@ -58,3 +58,22 @@
     margin: 30px 0;
   }
 }
+
+
+@mixin separated-title($border-color){
+  display: flex;
+  align-items: center;
+  &:before,
+  &:after{
+    border-top: 1px solid $border-color;
+    content: "";
+    flex-grow: 1;
+  }
+  &:before{
+    margin-right: 1rem;
+  }
+  &:after{
+    margin-left: 1rem;
+  }
+}
+

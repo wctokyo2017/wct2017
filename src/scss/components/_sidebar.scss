@@ -1,3 +1,98 @@
 #secondary{
-  display: none;
+}
+
+
+#secondary-sidebar{
+
+  @extend .grid-container;
+
+}
+
+.sponsor{
+
+  &-level{
+    padding: 10px;
+    &:after{
+      content: "";
+      display: block;
+      clear: left;
+    }
+
+    &-title{
+      text-align: center;
+      font-family: $wct-title-sans-en;
+      font-size: 20px;
+      margin: 0 0 20px;
+      .gold &,
+      .tokyo-gold &{
+        @include separated-title( #C3A400 );
+      }
+      .silver &,
+      .tokyo-silver &{
+        @include separated-title( #C0C0C0 );
+      }
+      .bronze &,
+      .tokyo-bronze &{
+        @include separated-title(#A46628);
+      }
+      .tokyo-green &{
+        @include separated-title( #10909E );
+      }
+      .in-kind &,
+      .tools &{
+        @include separated-title( #B3DEE6 );
+      }
+
+    }
+
+  }
+
+
+  &-logo{
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    .gold &,
+    .tokyo-gold &{
+      width: 50%;
+      @include wct-small-screen() {
+        width: auto;
+        float: none;
+      }
+    }
+    .silver &,
+    .tokyo-silver &{
+      width: 33%;
+      @include wct-small-screen() {
+        width: auto;
+        float: none;
+      }
+    }
+    .bronze &,
+    .tokyo-bronze &{
+      width: 25%;
+      @include wct-small-screen() {
+        width: 50%;
+      }
+    }
+    .in-kind &,
+    .tokyo-green &,
+    .tool &{
+      width: 20%;
+      @include wct-small-screen() {
+        width: 33%;
+      }
+    }
+    img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+    &:hover{
+      opacity: .8;
+    }
+  }
+
 }
