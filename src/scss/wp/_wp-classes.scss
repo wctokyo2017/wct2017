@@ -54,7 +54,6 @@
  * alignment
  */
 .alignleft {
-  display: inline;
   float: left;
   margin-right: $wp-align-margin;
   margin-bottom: $wp-align-margin;
@@ -65,7 +64,6 @@
   margin: 0 auto;
 }
 .alignright {
-  display: inline;
   float: right;
   margin-left: $wp-align-margin;
   margin-bottom: $wp-align-margin;
