@@ -1,5 +1,8 @@
 #after-header-widgets {
-  .widget_nav_menu {
+
+  // Line menu
+  .menu-line-menu-container {
+
     background-color: #e1f7fc;
 
     .menu {
@@ -88,4 +91,86 @@
       }
     }
   }
+
+  // Circle-menu
+  .menu-circle-menu-container {
+    @extend .grid-container;
+    $pad: 60px;
+    $height: 200px;
+    ul {
+      padding: $pad 0;
+      margin: 0;
+      @extend %clearfix;
+      border-bottom: 1px solid #EEE;
+      li {
+        list-style: none;
+        float: left;
+        width: 33%;
+        -webkit-perspective: 1000;
+        perspective: 1000;
+        a {
+          width: $height;
+          padding-top: $height + 20;
+          margin: 0 auto;
+          position: relative;
+          display: block;
+          text-align: center;
+          -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          &:before, &:after {
+            transition: .6s;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background-position: left top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 50%;
+          }
+          &:hover {
+            &:before{
+              transform: rotate(360deg);
+            }
+            &:after {
+              transform: rotateY(180deg);
+            }
+          }
+          &:before {
+            transform: rotateY(180deg);
+          }
+          &:after {
+          }
+          &:link, &:visited {
+            text-decoration: none;
+            color: $wct-footer-bg;
+          }
+          &:hover, &:active {
+            text-decoration: none;
+            color: $wct-footer-bg-hover;
+          }
+        }
+      }
+      ul {
+        display: none;
+      }
+    }
+
+    // Set background image
+    @each $class in ( ticket, ticket-on, thumb, access ) {
+      .#{$class} a:before{
+        background-image: url("#{$img-path}menu-icon/#{$class}-on.png");
+      }
+      .#{$class} a:after{
+        background-image: url("#{$img-path}menu-icon/#{$class}.png");
+      }
+    }
+
+  }
+
 }
