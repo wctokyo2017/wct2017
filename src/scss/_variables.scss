@@ -11,7 +11,7 @@ $env: 'development' !default;
 // Main
 $wct-bg-color: #fff;
 $wct-header-bg: transparentize( #3094e9, 0.82);
-$wct-table-header-bg: #012c5d;
+$wct-table-header-bg: #ccc;
 
 $h-border: #28b1c4;
 
@@ -21,7 +21,10 @@ $wct-btn-color: #fff;
 $wct-btn-disabled-bg: #ccc;
 
 // Footer
-$wct-footer-bg: #000C24;
+$wct-footer-bg: #10909E;
+$wct-footer-border: #19B1C6;
+$wct-footer-bg-hover: #FF4081;
+$wct-footer-border-hover: #FFB8D7;
 
 // link
 $link-color: #28b1c4;
@@ -40,6 +43,8 @@ $body-base-weight: 300;
 $wct-monospace: Consolas, 'Courier New', Courier, Monaco, monospace;
 $fa-font-size-base: 1em;
 
+// Misc
+$wct-title-sans-en: 'Julius Sans One', sans-serif;
 
 //
 //------------------------

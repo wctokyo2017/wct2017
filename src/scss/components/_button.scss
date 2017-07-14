@@ -42,13 +42,15 @@ a{
       box-shadow: 0 0 0 0 transparent;
     }
     &.hollow{
-      border: 1px solid $wct-btn-color;
+      border: 1px solid $link-color;
       &:link, &:visited{
+        color: $link-color;
         background: transparent;
       }
       &:hover, &:active{
-        background: $wct-btn-color;
+        background: transparent;
         color: $wct-btn-bg;
+        border-color: $wct-btn-bg;
       }
     }
     &.disabled{
@@ -60,27 +62,30 @@ a{
   }
 }
 
-input{
-  &.btn{
-    border: none;
-    font-size: 16px;
+%btn{
+  display: inline-block;
+  border: none;
+  font-size: 16px;
+  color: $wct-btn-color;
+  background: $wct-btn-bg;
+  &:hover {
+    background: #0288d1;
     color: $wct-btn-color;
-    background: $wct-btn-bg;
-    &:hover{
-      background: #0288d1;
-      color: $wct-btn-color;
-    }
-    &.hollow{
-      border: 1px solid $wct-btn-color;
-      background: transparent;
-      &:hover{
-        background: $wct-btn-color;
-        color: $wct-btn-bg;
-      }
-    }
-    &.disabled{
-      pointer-events: none;
-      background-color: $wct-btn-disabled-bg;
+  }
+  &.hollow {
+    border: 1px solid $link-color;
+    background: transparent;
+    &:hover {
+      border-color: $wct-btn-bg;
+      color: $wct-btn-bg;
     }
   }
+  &.disabled {
+    pointer-events: none;
+    background-color: $wct-btn-disabled-bg;
+  }
+}
+
+input.btn{
+  @extend %btn;
 }

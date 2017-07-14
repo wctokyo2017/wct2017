@@ -70,3 +70,14 @@ body{
   font-family: FontAwesome;
   -webkit-font-smoothing: antialiased;
 }
+
+%text-link{
+  &:link, &:visited{
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+  &:hover, &:active{
+    color: $link-color;
+    text-decoration: none;
+  }
+}
