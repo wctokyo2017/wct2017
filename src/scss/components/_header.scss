@@ -94,7 +94,7 @@ body {
                        50% 290px,
                        50% 340px;
   background-size: auto, (517px / 1.5), (84px / 1.5), (470px / 1.5);
-  height: 650px;
+  height: 647px;
   width: 1500px;
   margin: 0 calc((100vw - 1500px) / 2);
   top: 0;
@@ -121,7 +121,7 @@ body {
     background-repeat: no-repeat;
     position: absolute;
     right: 455px;
-    bottom: 64px;
+    bottom: 61px;
   }
 
   &::after {
@@ -133,6 +133,6 @@ body {
     background-repeat: no-repeat;
     position: absolute;
     right: 400px;
-    bottom: 60px;
+    bottom: 56px;
   }
 }
