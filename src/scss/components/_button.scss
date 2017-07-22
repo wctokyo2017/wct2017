@@ -35,7 +35,7 @@ a{
       color: $wct-btn-color;
     }
     &:hover, &:active{
-      background: #0288d1;
+      background: $wct-btn-gb-hover;
       color: $wct-btn-color;
     }
     &:active{
@@ -69,7 +69,7 @@ a{
   color: $wct-btn-color;
   background: $wct-btn-bg;
   &:hover {
-    background: #0288d1;
+    background: $wct-btn-gb-hover;
     color: $wct-btn-color;
   }
   &.hollow {
