@@ -162,7 +162,7 @@
     }
 
     // Set background image
-    @each $class in ( ticket, ticket-on, thumb, access ) {
+    @each $class in ( ticket, ticket-no, thumb, access ) {
       .#{$class} a:before{
         background-image: url("#{$img-path}menu-icon/#{$class}-on.png");
       }
