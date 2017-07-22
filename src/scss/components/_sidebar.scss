@@ -3,6 +3,7 @@
 
 
 #primary-sidebar{
+  display: none;
   &:after{
     content: "";
     clear: left;
