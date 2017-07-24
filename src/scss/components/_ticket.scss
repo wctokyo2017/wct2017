@@ -45,6 +45,10 @@
       text-align: right !important;
     }
   }
+  &-row-total td{
+    text-align: right !important;
+    font-family: $wct-monospace;
+  }
 
 }
 
