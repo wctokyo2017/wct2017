@@ -81,3 +81,16 @@ body{
     text-decoration: none;
   }
 }
+
+
+%text-input{
+  border: 1px solid #ddd;
+  color: #444;
+  padding: 4px 5px;
+  font-family: $wct-monospace;
+  border-radius: 2px;
+  font-size: 14px;
+  & + input{
+    margin-left: 0.5em;
+  }
+}

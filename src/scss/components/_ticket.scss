@@ -26,6 +26,16 @@
     font-size: .85em;
     color: #666;
   }
+  &-attendee-form{
+    input[type=text],
+    input[type=url],
+    input[type=email]{
+      @extend %text-input;
+      font-size: 16px;
+      width: 90%;
+      max-width: 300px;
+    }
+  }
 
   &-column-price{
     tbody &{
@@ -62,4 +72,69 @@
       @extend %btn;
     }
   }
+
+  &-coupon{
+    &-container{
+      input[type=submit]{
+        font-size: 14px;
+      }
+    }
+    &-input{
+      .entry-content &{
+        @extend %text-input;
+      }
+    }
+  }
+}
+
+// Attendees
+#tix-attendees{
+
+ul.tix-attendee-list{
+  @extend %clearfix;
+  padding-left: 0 !important;
+    li{
+      box-sizing: border-box;
+      padding: 10px;
+      height: auto;
+      &:nth-child(3n+1){
+        clear: left;
+      }
+      .tix-field{
+        margin: 0 0 2px;
+        text-align: center;
+      }
+      .tix-attendee-name{
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+      .tix-attendee{
+        &-url,
+        &-twitter{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &:link, &:visited{
+            text-decoration: none;
+            color: #999;
+          }
+          &:hover, &:active{
+            text-decoration: underline;
+            color: $link-color;
+          }
+        }
+      }
+
+    }
+    .avatar{
+      float: none;
+      width: auto;
+      height: auto;
+      margin: 0 auto 10px;
+      display: block;
+      border-radius: 50%;
+    }
+
+
+}
 }

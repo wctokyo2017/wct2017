@@ -161,7 +161,7 @@ gulp.task('deploy', function() {
 gulp.task('watch', function() {
   deployFlg = false;
   var paths = filePaths();
-  gulp.watch([paths.htmlDest  + '**/*'], ['bs-reload']);
+  // gulp.watch([paths.htmlDest  + '**/*'], ['bs-reload']);
   gulp.watch([paths.htmlPath  + '**/*.pug'], ['pug']);
   gulp.watch([paths.scssPath  + '**/*.scss'], ['sass']);
   gulp.watch([paths.imageDest + '**/*'], ['image-min']);
