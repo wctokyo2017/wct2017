@@ -5,6 +5,20 @@
 #primary{
 }
 
+// Eyecatch
+.site-content{
+  .wp-post-image{
+    display: block;
+    margin: 40px auto 0;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    & + article{
+      padding-top: 40px;
+    }
+  }
+}
+
 // Main content
 article.hentry, article.error404 {
   margin: 0 auto;
@@ -77,4 +91,16 @@ footer.entry-meta{
 
 #comments{
   @include base-margin;
+}
+
+// Post type
+.single-wcb_sponsor{
+  h1.entry-title{
+    &:before{
+      content: "スポンサー:";
+      display: inline;
+      margin-right: 0.5em;
+      color: #888;
+    }
+  }
 }
