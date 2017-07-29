@@ -13,6 +13,12 @@
     width: auto;
     height: auto;
     max-width: 100%;
+
+    .single-wcb_sponsor &{
+      width: 90%;
+      max-width: 780px;
+    }
+
     & + article{
       padding-top: 40px;
     }
