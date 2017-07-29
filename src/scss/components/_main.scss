@@ -84,6 +84,15 @@ article.hentry, article.error404 {
   &-content{
     @extend %entry-content;
 
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=url],
+    textarea{
+      padding: 5px;
+      font-size: 16px;
+    }
+
     .sharedaddy{
       margin-top: 60px;
     }
