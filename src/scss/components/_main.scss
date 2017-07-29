@@ -83,6 +83,10 @@ article.hentry, article.error404 {
 
   &-content{
     @extend %entry-content;
+
+    .sharedaddy{
+      margin-top: 60px;
+    }
   }
 }
 
