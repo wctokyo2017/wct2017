@@ -92,15 +92,3 @@ footer.entry-meta{
 #comments{
   @include base-margin;
 }
-
-// Post type
-.single-wcb_sponsor{
-  h1.entry-title{
-    &:before{
-      content: "スポンサー:";
-      display: inline;
-      margin-right: 0.5em;
-      color: #888;
-    }
-  }
-}
