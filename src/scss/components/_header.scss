@@ -134,4 +134,13 @@ body {
     right: 400px;
     bottom: 56px;
   }
+
+  [class*='-en '] &,
+  [class$='-en'] & {
+    background-image: url(#{$img-path}header-bg.svg),
+                      url(#{$img-path}cloud.svg),
+                      url(#{$img-path}wct2017-logo.svg),
+                      url(#{$img-path}wct2017-theme.svg),
+                      url(#{$img-path}wct2017-date-en.svg);
+  }
 }
