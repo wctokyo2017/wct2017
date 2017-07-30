@@ -71,18 +71,18 @@ body {
     position: absolute;
     display: block;
     background: url("#{$img-path}with-wapuu.png") center center no-repeat;
-    background-size: cover;
-    top: 50%;
-    width: 200px;
-    height: 135px;
+    background-size: contain;
+    top: 125px;
+    width: 160px;
+    height: 108px;
     z-index: 200;
-    right: 100px;
-    margin-top: -67px;
+    left: 50%;
+    margin-left: 300px;
     @include wct-small-screen(960px){
-      right: 20px;
+      top: 45px;
       width: 100px;
+      margin-left: -50px;
       height: 67px;
-      margin-top: -34px;
     }
   }
 }
