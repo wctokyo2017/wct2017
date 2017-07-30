@@ -84,6 +84,9 @@ article.hentry, article.error404 {
   &-content{
     @extend %entry-content;
 
+    // Avoid more tag link bug
+    overflow-y: visible;
+
     input[type=text],
     input[type=email],
     input[type=password],
