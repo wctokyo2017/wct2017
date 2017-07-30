@@ -64,6 +64,27 @@ body {
       height: ($satellite-height-pc / 1.4);
     }
   }
+
+  &:after{
+    @extend %hovering;
+    content: "";
+    position: absolute;
+    display: block;
+    background: url("#{$img-path}with-wapuu.png") center center no-repeat;
+    background-size: cover;
+    top: 50%;
+    width: 200px;
+    height: 135px;
+    z-index: 200;
+    right: 100px;
+    margin-top: -67px;
+    @include wct-small-screen(960px){
+      right: 20px;
+      width: 100px;
+      height: 67px;
+      margin-top: -34px;
+    }
+  }
 }
 
 .site-description {
