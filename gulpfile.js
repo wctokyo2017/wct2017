@@ -23,7 +23,7 @@ function filePaths() {
   var assetBase = deployFlg ? './docs/assets' : './dist/assets';
   return {
     'root'           : './',
-    'vhost'          : 'wct2017.dev',
+    'vhost'          : 'wctokyo2017.dev',
     'port'           : 3000,
     'htmlDest'       : './dist/',
     'imagePath'      : './src/images/',
