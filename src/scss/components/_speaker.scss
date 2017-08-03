@@ -1,0 +1,73 @@
+.wcb_speaker {
+  .entry-meta {
+    display: none;
+  }
+
+  .speaker-avatar {
+    float: left;
+    margin-right: 20px;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .wcorg-speaker-right {
+    overflow: none;
+  }
+
+  .wcorg-speaker-icons {
+    height: 28px;
+    overflow: hidden;
+
+    li {
+      float: left;
+      margin-bottom: 0;
+      margin-left: 10px;
+      list-style-type: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .wcorg-speaker-icon {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    text-align: center;
+    border-radius: 50%;
+    transition: .3s;
+
+    > i {
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1.75rem;
+    }
+
+    &--gh {
+      color: #333;
+
+      &:hover, &:active, &:focus {
+        color: #4d4d4d;
+      }
+    }
+
+    &--tw {
+      background-color: #55acee;
+
+      &:hover, &:active, &:focus {
+      	background-color: #83c3f3;
+      }
+    }
+
+    &--fb {
+      background-color: #3b5998;
+
+      &:hover, &:active, &:focus {
+      	background-color: #4c70ba;
+      }
+    }
+  }
+}
