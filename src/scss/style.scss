@@ -8,8 +8,7 @@
 @import "bourbon";
 @import "neat";
 @import "font-awesome";
-@import "https://2017.tokyo.wordcamp.org/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css";
-@import "https://2017.tokyo.wordcamp.org/wp-includes/css/dashicons.min.css";
+@import url("https://2017.tokyo.wordcamp.org/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css");
 
 // Mixin & globals
 @import "mixins";
