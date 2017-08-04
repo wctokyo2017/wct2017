@@ -16,6 +16,14 @@
     overflow: hidden;
   }
 
+  .wcorg-speaker-belonging {
+    margin: 0 0 .5em;
+  }
+
+  .wcorg-speaker-url {
+    margin: .5em 0 0;
+  }
+
   .wcorg-speaker-icons {
     margin: 0;
     padding: 0;
@@ -80,6 +88,10 @@
     }
   }
 
+  .wcorg-speaker-info {
+    margin: 30px 0 0;
+  }
+
   .speaker-sessions {
     padding: 5px 10px;
     border-left-width: 2px;
@@ -88,6 +100,8 @@
   }
 
   #speaker-session-names {
+    margin: 20px 0 0 12px;
+
     a {
       display: block;
       text-decoration: none;
