@@ -261,7 +261,9 @@
     .wcpt-time-1250 td,
     .wcpt-time-1400 .wcpt-session-empty,
     .wcpt-time-1600 .wcpt-session-empty,
-    .wcpt-time-1740 td:nth-child(2) {
+    .wcpt-time-1740 td:nth-child(2),
+    .wcpt-time-1415 .wcpt-session-empty,
+    .wcpt-time-1415 .wcpt-session-empty {
       border-top-width: 0;
     }
   }
