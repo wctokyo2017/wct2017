@@ -175,12 +175,6 @@
       border-right-width: 1px;
     }
 
-    .wcpt-time-1115 .wcpt-session-empty,
-    .wcpt-time-1250 .wcpt-session-empty {
-      border-right-width: 1px;
-      border-left-width: 1px;
-    }
-
     /* 分類 */
     .wcb-track-room-m.wcpt-session-type-session,
     .wcb-track-room-k.wcpt-session-type-session,
@@ -241,8 +235,18 @@
     .wcpt-time-1115 .wcpt-session-empty,
     .wcpt-time-1230 td,
     .wcpt-time-1650 .wcb-track-room-ad,
-    .wcb-track-room-m.wcpt-session-type-session {
+    .wcb-track-room-m.wcpt-session-type-session,
+    .wcpt-time-1400 .wcb-track-room-ad,
+    .wcpt-time-1400 .wcb-track-room-ef {
       border-bottom-width: 0;
+    }
+
+    .wcpt-time-1115 .wcpt-session-empty,
+    .wcpt-time-1250 .wcpt-session-empty,
+    .wcpt-time-1415 .wcpt-session-empty,
+    .wcpt-time-1415 .wcpt-session-empty  {
+      border-right-width: 1px;
+      border-left-width: 1px;
     }
 
     .wcpt-time-1130 .wcpt-session-empty,
