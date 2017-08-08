@@ -155,7 +155,7 @@
     }
 
     /* 空欄 */
-    .wcpt-time-1000 .wcpt-session-empty,
+    .wcpt-session-empty,
     .wcpt-time-1010 .wcpt-session-empty,
     .wcpt-time-1650 .wcpt-session-empty,
     .wcpt-time-1740 .wcpt-session-empty,
@@ -180,45 +180,52 @@
     }
 
     /* 分類 */
-    .wcb-track-room-m.wcpt-session-type-session:before,
-    .wcb-track-room-k.wcpt-session-type-session:before,
-    .wcpt-time-1230 .wcb-track-room-ad:before,
-    .wcpt-time-1230 .wcb-track-room-ef:before {
-      border-radius: 3px;
-      color: #fff;
-      display: inline-block;
-      font-size: .85em;
-      text-align: center;
-      line-height: 1;
-      padding: 6px 8px 3px;
-      margin-bottom: 8px;
+    .wcb-track-room-m.wcpt-session-type-session,
+    .wcb-track-room-k.wcpt-session-type-session,
+    .wcpt-time-1230 .wcb-track-room-ad,
+    .wcpt-time-1230 .wcb-track-room-ef {
+      position: relative;
+      padding-top: 40px;
+
+      &::after {
+        position: absolute;
+        top: .9em;
+        left: 1em;
+        border-radius: 3px;
+        color: #fff;
+        display: inline-block;
+        font-size: .85em;
+        text-align: center;
+        line-height: 1;
+        padding: 6px 8px 3px;
+      }
     }
 
     /* アンカンファレンス */
-    .wcb-track-room-m.wcpt-session-type-session:before {
+    .wcb-track-room-m.wcpt-session-type-session:after {
       background-color: #00a4a9;
       content: "アンカンファレンス";
     }
 
     /* 同時通訳 */
-    .wcb-track-room-k.wcpt-session-type-session:before {
+    .wcb-track-room-k.wcpt-session-type-session:after {
       background-color: #bf0f0f;
       content: "同時通訳あり";
     }
 
     /* ランチ */
-    .wcpt-time-1230 .wcb-track-room-ad:before,
-    .wcpt-time-1230 .wcb-track-room-ef:before {
+    .wcpt-time-1230 .wcb-track-room-ad:after,
+    .wcpt-time-1230 .wcb-track-room-ef:after {
       content: "ランチセッション";
     }
 
-    .wcpt-time-1230 .wcb-track-room-m:before {
+    .wcpt-time-1230 .wcb-track-room-m:after {
       content: "ランチ";
     }
 
-    .wcpt-time-1230 .wcb-track-room-ad:before,
-    .wcpt-time-1230 .wcb-track-room-ef:before,
-    .wcpt-time-1230 .wcb-track-room-m:before {
+    .wcpt-time-1230 .wcb-track-room-ad:after,
+    .wcpt-time-1230 .wcb-track-room-ef:after,
+    .wcpt-time-1230 .wcb-track-room-m:after {
       background-color: #f59e00;
     }
 
@@ -254,9 +261,19 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  .wcpt-schedule tr {
+    border: none !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .entry-content {
     .wcpt-schedule {
+      td {
+        border: 1px solid #c0c0c0
+      }
+
       tr td:last-child {
         border-bottom-width: 1px !important;
       }
@@ -278,38 +295,55 @@
       .wcpt-time {
         margin: 1em 0 0;
         background-color: transparent;
-        border-top-width: 0;
-        border-left-width: 0;
-        border-right-width: 0;
-        border-bottom-width: 1px !important;
+        border: none;
         color: #000 !important;
         font-weight: bold;
         padding: 0 0 .5em !important;
       }
 
-      .wcpt-session-type-session,
-      .wcpt-session-type-custom {
+      .wcpt-session-title {
+        padding: 0;
+      }
+
+      .wcpt-session-speakers {
+        margin: 0;
+        padding: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .wcpt-session-type-session {
         position: relative;
         border-bottom-width: 1px !important;
-        padding-top: 50px;
+        padding-top: 60px;
 
-        &::after {
+        &::before {
           position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
+          top: -1px;
+          right: -1px;
+          left: -1px;
           margin: 0 !important;
           content: attr(data-track-title);
           display: block;
           background-color: #efefef;
-          border-bottom: 1px solid #c0c0c0;
+          border: 1px solid #c0c0c0 !important;
           color: #666;
-          font-size: 11px;
           padding: .9em 1em;
         }
       }
 
-      .wcb-session-open {}
+      .wcb-track-room-m.wcpt-session-type-session,
+      .wcb-track-room-k.wcpt-session-type-session,
+      .wcpt-time-1230 .wcb-track-room-ad,
+      .wcpt-time-1230 .wcb-track-room-ef {
+        padding-top: 90px;
+
+        &::after {
+          top: 60px;
+        }
+      }
     }
   }
 }
