@@ -155,7 +155,9 @@
     }
 
     /* 空欄 */
-    .wcpt-session-empty,
+    .wcpt-session-empty {
+      background-color: #fff;
+    }
     .wcpt-time-1010 .wcpt-session-empty,
     .wcpt-time-1650 .wcpt-session-empty,
     .wcpt-time-1740 .wcpt-session-empty,
