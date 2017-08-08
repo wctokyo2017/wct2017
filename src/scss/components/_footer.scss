@@ -1,4 +1,21 @@
 
+.btn-register-footer {
+  transition: background-color .2s linear, color .2s linear;
+  border-radius: 36px;
+  font-size: 1.2em;
+  height: 72px;
+  line-height: 72px;
+  width: 80%;
+  margin-bottom: 40px;
+
+
+  &:hover{
+    color: #fff;
+    text-decoration: none;
+    background: $wct-footer-bg-hover !important;
+  }
+}
+
 .site-footer{
 }
 

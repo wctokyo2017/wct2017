@@ -25,13 +25,12 @@
   }
 }
 
-.page-slug-sponsors{
-  .wcorg-sponsor-description{
-    .wp-post-image{
-      display: none;
-    }
+.page-slug-sponsors .wcorg-sponsor-description{
+  .wp-post-image{
+    display: none;
   }
 }
+
 
 // Main content
 article.hentry, article.error404 {
