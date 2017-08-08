@@ -54,6 +54,11 @@ body{
     clear: both;
   }
 }
+
+.clearfix{
+  @extend %clearfix;
+}
+
 .assistive-text{
   height: 1px;
   width: 1px;
