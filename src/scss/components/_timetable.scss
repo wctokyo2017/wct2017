@@ -159,6 +159,7 @@
       background-color: #fff;
     }
     .wcpt-time-1010 .wcpt-session-empty,
+    .wcpt-time-1440 .wcpt-session-empty,
     .wcpt-time-1650 .wcpt-session-empty,
     .wcpt-time-1740 .wcpt-session-empty,
     .wcpt-time-1750 .wcpt-session-empty,
@@ -237,7 +238,9 @@
     .wcpt-time-1650 .wcb-track-room-ad,
     .wcb-track-room-m.wcpt-session-type-session,
     .wcpt-time-1400 .wcb-track-room-ad,
-    .wcpt-time-1400 .wcb-track-room-ef {
+    .wcpt-time-1400 .wcb-track-room-ef,
+    .wcpt-time-1400 .wcb-track-room-k,
+    .wcpt-time-1400 td:last-child {
       border-bottom-width: 0;
     }
 
