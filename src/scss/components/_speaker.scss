@@ -1,11 +1,14 @@
-.wcb_speaker {
+.wcb_speaker,
+.page-slug-speakers .wcorg-speakers {
   .entry-meta {
     display: none;
   }
 
-  .speaker-avatar {
+  .speaker-avatar,
+  .wcorg-speaker-description > img {
     float: left;
     margin-right: 20px;
+    border-radius: 100%;
 
     img {
       border-radius: 100%;
@@ -94,7 +97,8 @@
 
   .wcorg-speaker-info {
     clear: both;
-    margin: 30px 0 0;
+    margin: 0;
+    padding: 30px 0 0;
   }
 
   .speaker-sessions {
