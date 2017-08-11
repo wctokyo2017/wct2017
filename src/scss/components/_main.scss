@@ -92,7 +92,7 @@ article.hentry, article.error404 {
     @extend %entry-content;
 
     // Avoid more tag link bug
-    overflow-y: visible;
+    overflow: visible;
     padding-bottom: 10px;
 
     input[type=text],
