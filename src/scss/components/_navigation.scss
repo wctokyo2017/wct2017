@@ -61,7 +61,11 @@ body{
   width: 100%;
   height: $navigation-height-sm;
 
-  @media only screen and ( min-width: $wordcamp-break-point ){
+  @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+    height: auto;
+  }
+
+  @media only screen and ( min-width: 1051px ){
     height: $navigation-height;
   }
 
@@ -94,6 +98,8 @@ body{
         position: absolute;
         right: 0;
         top: 0;
+        bottom: 0;
+        display: flex;
       }
 
       &:hover > .sub-menu{
@@ -110,7 +116,11 @@ body{
     height: $navigation-height-sm;
     width: 100%;
 
-    @media only screen and ( min-width: $wordcamp-break-point ){
+    @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+      height: auto;
+    }
+
+    @media only screen and ( min-width: 1051px ){
       height: $navigation-height;
     }
 
@@ -122,7 +132,11 @@ body{
         display: inline-block;
         float: left;
 
-        @media only screen and ( min-width: $wordcamp-break-point ){
+        @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+          height: auto;
+        }
+
+        @media only screen and ( min-width: 1051px ){
           height: $navigation-height;
         }
 
@@ -153,7 +167,13 @@ body{
           top: $navigation-height-sm;
           width: auto;
 
-          @media only screen and ( min-width: $wordcamp-break-point ){
+          @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+            height: auto;
+            top: 100%;
+          }
+
+          @media only screen and ( min-width: 1051px ){
+            height: $navigation-height;
             top: $navigation-height;
           }
 
@@ -214,7 +234,6 @@ body{
         display: inline-block;
         text-align: center;
         width: 50%;
-        top: 0;
         & > a{
           &:before{
             @extend %fa;
@@ -301,10 +320,17 @@ body{
 .main-navigation,
 .main-small-navigation {
   .menu {
+    @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+      padding-right: 120px;
+    }
+
     .right {
       & > a {
         background: $navigation-secondary-bg;
         text-align: center;
+        display: flex;
+        align-items: center;
+        height: auto;
         &:hover, &:active {
           background-color: $navigation-secondary-bg-hover;
           color: $navigation-secondary-bg;
