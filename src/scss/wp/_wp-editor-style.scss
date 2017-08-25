@@ -92,6 +92,10 @@
     margin: 2em 0;
   }
 
+  p.interviewer{
+    color: #444;
+  }
+
   blockquote{
     @include base-margin;
     box-sizing: border-box;
