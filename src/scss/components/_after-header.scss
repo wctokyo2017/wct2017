@@ -1,4 +1,54 @@
 #after-header-widgets {
+  // 最新の情報
+  .widget_recent_entries {
+    @extend .grid-container;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    max-width: 900px;
+
+    .widget-title {
+      margin: 0 0 10px;
+      color: #644419;
+      font-weight: normal;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 2.6em;
+
+      &::before {
+        content: "new";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 4px 6px;
+        background-color: #ed4a1e;
+        border-radius: 4px;
+        color: #fff;
+        font-size: .75rem;
+        line-height: 1;
+      }
+    }
+
+    a {
+      color: #1583cc;
+      text-decoration: none;
+    }
+
+    .post-date {
+      font-size: .8125rem;
+      color: #a0a0a0;
+    }
+  }
 
   // Line menu
   .menu-line-menu-container {
@@ -96,6 +146,7 @@
   .menu-circle-menu-container {
     $pad: 60px;
     $height: 180px;
+    border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
     ul {
       @extend .grid-container;
