@@ -94,26 +94,40 @@
 
   // Circle-menu
   .menu-circle-menu-container {
-    @extend .grid-container;
     $pad: 60px;
-    $height: 200px;
+    $height: 180px;
+    border-bottom: 1px solid #EEE;
     ul {
+      @extend .grid-container;
       padding: $pad 0;
-      margin: 0;
       @extend %clearfix;
-      border-bottom: 1px solid #EEE;
+      @include wct-small-screen(){
+        padding: ($pad / 2) 0 0;
+      }
       li {
+        box-sizing: border-box;
+        padding: 0 10px;
         list-style: none;
         float: left;
-        width: 33%;
+        width: 25%;
         -webkit-perspective: 1000;
         perspective: 1000;
+        @include wct-small-screen(){
+          width: 50%;
+          padding: 0 10px ($pad / 2);
+        }
         a {
-          width: $height;
+          color: #000;
+          font-weight: bold;
+          font-size: 20px;
+          text-decoration: none;
+          width: 100%;
+          text-align: center;
           padding-top: $height + 20;
           @include wct-small-screen(){
             width: $height / 2;
-            padding-top: ( $height + 20 ) / 2
+            padding-top: ($height + 20) / 2;
+            font-size: 10px;
           }
           margin: 0 auto;
           position: relative;
@@ -123,43 +137,45 @@
           transform-style: preserve-3d;
           &:before, &:after {
             transition: .6s;
-            content: "";
-            display: block;
+            font-weight: normal;
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
+            left: calc(50% - #{$height / 2});
+            width: $height;
+            height: $height;
             @include wct-small-screen(){
               height: $height / 2;
+              width: $height / 2;
+              left: calc(50% - #{($height / 2)/ 2});
             }
-            background-position: left top;
-            background-repeat: no-repeat;
-            background-size: cover;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            border-radius: 50%;
-          }
-          &:hover {
-            &:before{
-              transform: rotate(360deg);
-            }
-            &:after {
-              transform: rotateY(180deg);
-            }
           }
           &:before {
-            transform: rotateY(180deg);
+            content: "";
+            background-color: #f0f0f0;
+            display: block;
+            border-radius: 50%;
           }
           &:after {
-          }
-          &:link, &:visited {
-            text-decoration: none;
+            font-family: FontAwesome;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
             color: $wct-footer-bg;
+            @include wct-small-screen(){
+              font-size: (90px / 2);
+            }
           }
-          &:hover, &:active {
-            text-decoration: none;
-            color: $wct-footer-bg-hover;
+          &:hover {
+            &:before {
+              transform: rotateY(360deg);
+            }
+            &:after {
+              color: $wct-footer-bg-hover;
+              transform: rotateY(360deg);
+            }
           }
         }
       }
@@ -167,17 +183,10 @@
         display: none;
       }
     }
-
-    // Set background image
-    @each $class in ( ticket, ticket-no, thumb, access ) {
-      .#{$class} a:before{
-        background-image: url("#{$img-path}menu-icon/#{$class}-on.png");
-      }
-      .#{$class} a:after{
-        background-image: url("#{$img-path}menu-icon/#{$class}.png");
-      }
-    }
-
+   .ticket a::after { content: "\f145"; }
+   .schedule a::after { content: "\f073"; }
+   .contributer-day a::after { content: "\f19a"; }
+   .location a::after { content: "\f041"; }
   }
 
 }
