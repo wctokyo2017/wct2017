@@ -80,6 +80,57 @@
   }
 }
 
+.widget-banners{
+  @extend .clearfix;
+  margin: 40px 0;
+  &-item{
+    width: 33%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+  }
+  &-link{
+    display: block;
+    transition: opacity .2s linear;
+    &:hover{
+      opacity: .85;
+    }
+    img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+    &.disabled{
+      position: relative;
+      img{
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        filter: grayscale(100%);
+      }
+      &:after{
+        content: "COMING SOON";
+        position: absolute;
+        display: inline-block;
+        padding: 10px;
+        color: $wct-footer-bg-hover;
+        font-family: $wct-title-sans-en;
+        font-size: 24px;
+        text-shadow: 0 0 2px rgba(0, 0, 0, .4);
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        background: rgba(255, 255, 255, .8);
+        max-width: 80%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+    }
+  }
+}
+
 .sponsor{
 
 
