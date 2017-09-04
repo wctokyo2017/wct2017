@@ -361,3 +361,16 @@
     }
   }
 }
+
+/**
+ * 英語ページでのタイムテーブル
+ */
+.en-timetable {
+  @media screen and (min-width: 701px) {
+    .wcpt-schedule {
+      thead .wcpt-col-time {
+        width: 5%;
+      }
+    }
+  }
+}
